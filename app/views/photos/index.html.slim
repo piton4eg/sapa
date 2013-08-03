@@ -1,0 +1,24 @@
+#fotorama
+  .fotorama data-width="100%" data-max-height="100%" data-transition="crossfade" data-loop="true" data-keyboard="true"
+    = image_tag "1.png"
+    = image_tag "2.jpg"
+    = image_tag "3.jpg"
+    = image_tag "4.png"
+    = image_tag "5.jpg"
+
+- if @photos.present?
+  p Photos list
+  table
+    tr
+      th Name
+      th Description
+      th Image
+      th
+    - @photos.each do |photo|
+      tr
+        td = photo.name
+        td = photo.description
+        td = photo.image
+        td = link_to "Edit", edit_photo_path(photo)
+
+= link_to "New", new_photo_path

@@ -1,0 +1,10 @@
+h2 = @photo.name
+
+.row
+  p = "Name: #{@photo.name}"
+  p = "Desc: #{@photo.description}"
+  p = "Image: #{@photo.image}"
+
+  = link_to "List", photos_path
+  br
+  = link_to "Edit", edit_photo_path(@photo)
