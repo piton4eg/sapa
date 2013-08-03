@@ -1,16 +1,4 @@
 h2 New photo
 
 .row
-  = form_for(@photo) do |f|
-    = render "shared/error_messages"
-
-    = f.label :name, "Name"
-    = f.text_field :name
-    br
-    = f.label :description, "Description"
-    = f.text_field :description
-    br
-    = f.label :image, "Image"
-    = f.text_field :image
-    br
-    = f.submit "Add"
+  = render "form"

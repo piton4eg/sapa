@@ -20,6 +20,7 @@ gem 'fotoramajs'
 gem 'slim-rails'
 gem 'jquery-rails-cdn'
 gem 'carrierwave'
+gem 'rmagick'
 
 group :development, :test do
   gem 'sqlite3'
