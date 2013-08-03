@@ -1,6 +1,8 @@
 #fotorama
   .fotorama data-width="100%" data-max-height="100%" data-transition="crossfade" data-loop="true" data-keyboard="true"
-    - @photos.each do |photo|
-      = image_tag photo.image_url.to_s
-
+    - if @photos.present?
+      - @photos.each do |photo|
+        = image_tag photo.image_url.to_s
+    - else
+      p Empty album, create new photo
 = link_to "New", new_photo_path
