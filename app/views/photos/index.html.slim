@@ -1,6 +1,6 @@
 #fotorama
   .fotorama data-width="100%" data-max-height="100%" data-transition="crossfade" data-loop="true" data-keyboard="true"
-    - if @photos.present?
+    - if @photos.any?
       - @photos.each do |photo|
         = image_tag photo.image_url.to_s
     - else
