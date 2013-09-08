@@ -21,6 +21,9 @@ gem 'slim-rails'
 gem 'jquery-rails-cdn'
 gem 'carrierwave'
 gem 'rmagick'
+gem 'fog'
+gem 'carrierwave_direct'
+gem 'sidekiq'
 
 group :development, :test do
   gem 'sqlite3'

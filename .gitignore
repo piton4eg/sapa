@@ -17,3 +17,5 @@
 public/uploads/photo/*
 public/uploads/tmp/*
 .idea/*
+
+/config/local_env.yml

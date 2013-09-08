@@ -2,12 +2,12 @@ h2 Galleries
 
 = render @galleries
 br
-= link_to "New", new_gallery_path
+= direct_upload_form_for @uploader do |f|
+  p = f.file_field :image
+  p = f.submit "New gallery"
 
-- if @photos.present?
-  h2 Photos
-  #fotorama
-    .fotorama data-width="50%" data-max-height="50%" data-transition="crossfade" data-loop="true" data-keyboard="true"
-      - @photos.each do |photo|
-        = image_tag photo.image_url.to_s
-        = photo.image_url.to_s
+h2 Photos
+#fotorama
+  .fotorama data-width="50%" data-max-height="50%" data-transition="crossfade" data-loop="true" data-keyboard="true"
+    - @photos.each do |photo|
+      = image_tag photo.image_url.to_s

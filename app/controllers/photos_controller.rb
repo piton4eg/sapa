@@ -7,7 +7,7 @@ class PhotosController < ApplicationController
   end
 
   def new
-    @photo = @gallery.photos.new
+    @photo = @gallery.photos.new(key: params[:key])
   end
 
   def create
@@ -42,7 +42,7 @@ class PhotosController < ApplicationController
 
   private
   def photo_params
-    params.require(:photo).permit(:name, :description, :image)
+    params.require(:photo).permit(:name, :description, :image, :key)
   end
 
   def find_gallery
@@ -51,6 +51,5 @@ class PhotosController < ApplicationController
 
   def find_photo
     @photo = @gallery.photos.find(params[:id])
-
   end
 end

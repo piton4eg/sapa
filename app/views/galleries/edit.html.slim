@@ -8,7 +8,10 @@ h2 Edit gallery
   = render @photos
 
 br
-= link_to "New photo", new_gallery_photo_path(@gallery)
+= direct_upload_form_for @uploader do |f|
+  p = f.file_field :image
+  p = f.submit "New photo"
+
 br
 = link_to "Back", :back
 
