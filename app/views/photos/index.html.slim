@@ -5,4 +5,4 @@
         = image_tag photo.image_url.to_s
     - else
       p Empty album, create new photo
-= link_to "New", new_photo_path
+= link_to "New", new_gallery_photo_path(@gallery)

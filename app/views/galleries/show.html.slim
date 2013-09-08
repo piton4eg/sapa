@@ -1,0 +1,9 @@
+h2 = @gallery.name
+
+.row
+  p = "Name: #{@gallery.name}"
+  p = "Image: #{@gallery.image}"
+
+  = link_to "List", galleries_path
+  br
+  = link_to "Edit", edit_gallery_path(@gallery)

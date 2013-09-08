@@ -1,0 +1,8 @@
+= form_for @gallery, html: { multipart: true } do |f|
+  = render partial: "shared/error_messages", locals: { obj: @gallery }
+  p
+    = f.label :name, "Name"
+    = f.text_field :name
+  p
+    = f.file_field :image
+  = f.submit

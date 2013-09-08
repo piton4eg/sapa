@@ -1,0 +1,5 @@
+h2 = photo.name
+= image_tag photo.image_url(:thumb).to_s
+
+= link_to "Edit", edit_gallery_photo_path(photo.gallery, photo)
+= link_to "Delete", gallery_photo_path(photo.gallery, photo), method: :delete

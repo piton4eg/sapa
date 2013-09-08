@@ -1,7 +1,7 @@
 doctype html
 html
 head
-  title Sapa
+  title SAPA - Photo by Olga Markova
   = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
   = jquery_include_tag :google
   = javascript_include_tag "application", "data-turbolinks-track" => true
@@ -9,4 +9,6 @@ head
 body
   - flash.each do |key, value|
     = content_tag(:div, value, class: "alert alert-#{key}")
+  h1 SAPA - Photo by Olga Markova
+  = link_to "Main", root_path
   = yield

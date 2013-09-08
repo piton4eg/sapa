@@ -3,8 +3,8 @@ h2 = @photo.name
 .row
   p = "Name: #{@photo.name}"
   p = "Desc: #{@photo.description}"
-  p = "Image: #{@photo.image}"
+  p = image_tag @photo.image_url(:thumb).to_s
 
-  = link_to "List", photos_path
+  = link_to "Edit", edit_gallery_photo_path(@gallery, @photo)
   br
-  = link_to "Edit", edit_photo_path(@photo)
+  = link_to "Gallery", galleries_path(gallery: @gallery)

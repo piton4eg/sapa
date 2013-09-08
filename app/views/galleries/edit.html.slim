@@ -1,0 +1,14 @@
+h2 Edit gallery
+
+
+.row
+  = render "form"
+
+- if @photos.present?
+  = render @photos
+
+br
+= link_to "New photo", new_gallery_photo_path(@gallery)
+br
+= link_to "Back", :back
+
