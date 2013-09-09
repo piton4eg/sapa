@@ -9,6 +9,5 @@ head
 body
   - flash.each do |key, value|
     = content_tag(:div, value, class: "alert alert-#{key}")
-  h1 SAPA - Photo by Olga Markova
-  = link_to "Main", root_path
+  h1 = link_to "SAPA - Photo by Olga Markova", root_path
   = yield

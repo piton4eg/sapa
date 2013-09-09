@@ -2,6 +2,7 @@
 
 class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWaveDirect::Uploader
+
   include CarrierWave::RMagick
 
   include CarrierWave::MimeTypes

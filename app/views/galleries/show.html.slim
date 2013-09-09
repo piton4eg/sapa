@@ -2,8 +2,9 @@ h2 = @gallery.name
 
 .row
   p = "Name: #{@gallery.name}"
-  = image_tag @gallery.image_url.to_s
+  p = "Description: #{@gallery.description}"
+  = image_tag @gallery.photo.image_url.to_s
 
-  = link_to "List", galleries_path
+  = link_to "List", galleries_path(gallery: @gallery)
   br
   = link_to "Edit", edit_gallery_path(@gallery)

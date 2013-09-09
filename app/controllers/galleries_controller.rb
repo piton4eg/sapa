@@ -9,19 +9,17 @@ class GalleriesController < ApplicationController
     else
       @photos = Photo.all
     end
-    @uploader = Gallery.new.image
-    @uploader.success_action_redirect = new_gallery_url
   end
 
   def new
-    @gallery = Gallery.new(key: params[:key])
+    @gallery = Gallery.new
   end
 
   def create
     @gallery = Gallery.new(gallery_params)
     if @gallery.save
       flash[:success] = "Gallery save success!"
-      redirect_to galleries_path(gallery: @gallery)
+      redirect_to gallery_path(@gallery)
     else
       render :new
     end
@@ -32,14 +30,12 @@ class GalleriesController < ApplicationController
 
   def edit
     @photos = @gallery.photos
-    @uploader = @gallery.photos.new.image
-    @uploader.success_action_redirect = new_gallery_photo_url(@gallery)
   end
 
   def update
     if @gallery.update_attributes(gallery_params)
       flash[:success] = "Gallery edit success!"
-      redirect_to galleries_path(gallery: @gallery)
+      redirect_to gallery_path(@gallery)
     else
       render :edit
     end
@@ -52,7 +48,7 @@ class GalleriesController < ApplicationController
 
   private
   def gallery_params
-    params.require(:gallery).permit(:name, :image, :key)
+    params.require(:gallery).permit(:name, :description, :photo_id)
   end
 
   def find_gallery

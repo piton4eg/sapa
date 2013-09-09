@@ -11,26 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130908201304) do
+ActiveRecord::Schema.define(version: 20130909151400) do
 
   create_table "galleries", force: true do |t|
-    t.string   "name"
-    t.string   "image"
+    t.string   "name",        null: false
+    t.string   "description", null: false
+    t.integer  "photo_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "image_processed"
   end
 
   create_table "photos", force: true do |t|
     t.string   "name",            null: false
-    t.string   "description"
+    t.string   "description",     null: false
     t.string   "image"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.integer  "gallery_id"
     t.boolean  "image_processed"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
-
-  add_index "photos", ["gallery_id"], name: "index_photos_on_gallery_id"
 
 end

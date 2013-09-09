@@ -1,7 +1,6 @@
-b = gallery.name
-- if gallery.image_processed?
-  = link_to image_tag(gallery.image_url(:mini).to_s), request.parameters.merge(gallery: gallery)
-- else
-  em Processing...
+b = "Name: #{gallery.name} \n"
+p = "Description: #{gallery.description} \n"
+
+= link_to image_tag(gallery.photo.image_url(:mini).to_s), request.parameters.merge(gallery: gallery) if gallery.photo.present?
 = link_to "Edit", edit_gallery_path(gallery)
 = link_to "Delete", gallery_path(gallery), method: :delete

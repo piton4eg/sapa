@@ -53,9 +53,8 @@ Sapa::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  resources :galleries do
-    resources :photos
-  end
+  resources :galleries
+  resources :photos
   root to: 'galleries#index'
 
 end
