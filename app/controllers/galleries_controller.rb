@@ -18,7 +18,7 @@ class GalleriesController < ApplicationController
   def create
     @gallery = Gallery.new(gallery_params)
     if @gallery.save
-      flash[:success] = "Gallery save success!"
+      flash[:success] = 'Gallery save success!'
       redirect_to gallery_path(@gallery)
     else
       render :new
@@ -34,7 +34,7 @@ class GalleriesController < ApplicationController
 
   def update
     if @gallery.update_attributes(gallery_params)
-      flash[:success] = "Gallery edit success!"
+      flash[:success] = 'Gallery edit success!'
       redirect_to gallery_path(@gallery)
     else
       render :edit
@@ -48,7 +48,7 @@ class GalleriesController < ApplicationController
 
   private
   def gallery_params
-    params.require(:gallery).permit(:name, :description, :photo_id)
+    params.require(:gallery).permit(:name, :description)
   end
 
   def find_gallery

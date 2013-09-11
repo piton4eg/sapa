@@ -1,17 +1,14 @@
 = form_for @photo, html: { multipart: true } do |f|
-  = render partial: "shared/error_messages", locals: { obj: @photo }
-  = f.hidden_field :key
-  p = "File: #{@photo.image_name}"
+  = render partial: 'shared/error_messages', locals: { obj: @photo }
   p
-    = f.label :name, "Name"
+    = f.label :name, 'Name'
     = f.text_field :name
   p
-    = f.label :description, "Description"
+    = f.label :description, 'Description'
     = f.text_field :description
   p
     = f.label :gallery_id
-    = f.text_field :gallery_id
-  p
-    = f.label :gallery_id
     = f.select :gallery_id, Gallery.all.collect { |g| [g.name, g.id] }
+  p
+    = f.file_field :image
   = f.submit

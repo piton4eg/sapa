@@ -4,18 +4,16 @@ class PhotosController < ApplicationController
   def index
     @photos = Photo.all
 
-    @uploader = Photo.new.image
-    @uploader.success_action_redirect = new_photo_url
   end
 
   def new
-    @photo = Photo.new(key: params[:key])
+    @photo = Photo.new
   end
 
   def create
     @photo = Photo.new(photo_params)
     if @photo.save
-      flash[:success] = "Photo save success!"
+      flash[:success] = 'Photo save success!'
       redirect_to photo_path(@photo)
     else
       render :new
@@ -30,7 +28,7 @@ class PhotosController < ApplicationController
 
   def update
     if @photo.update_attributes(photo_params)
-      flash[:success] = "Photo edit success!"
+      flash[:success] = 'Photo edit success!'
       redirect_to photo_path(@photo)
     else
       render :edit
@@ -44,7 +42,7 @@ class PhotosController < ApplicationController
 
   private
   def photo_params
-    params.require(:photo).permit(:name, :description, :image, :key, :gallery_id)
+    params.require(:photo).permit(:name, :description, :image, :gallery_id)
   end
 
   def find_photo

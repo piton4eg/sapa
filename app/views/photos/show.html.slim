@@ -4,6 +4,7 @@ h2 = @photo.name
   p = "Name: #{@photo.name}"
   p = "Desc: #{@photo.description}"
   p = image_tag @photo.image_url(:thumb).to_s
+  p = "Gallery: #{@photo.gallery.name}"
 
   = link_to "Edit", edit_photo_path(@photo)
   br

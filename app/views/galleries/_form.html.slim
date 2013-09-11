@@ -1,12 +1,9 @@
 = form_for @gallery, html: { multipart: true } do |f|
-  = render partial: "shared/error_messages", locals: { obj: @gallery }
+  = render partial: 'shared/error_messages', locals: { obj: @gallery }
   p
-    = f.label :name, "Name"
+    = f.label :name, 'Name'
     = f.text_field :name
   p
-    = f.label :description, "Description"
+    = f.label :description, 'Description'
     = f.text_area :description
-  p
-    = f.label :photo_id
-    = f.select :photo_id, @gallery.photos.collect { |p| [p.name, p.id] }
   = f.submit
