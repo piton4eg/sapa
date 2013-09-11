@@ -9,4 +9,4 @@ h2
 #fotorama
   .fotorama data-width="50%" data-max-height="50%" data-transition="crossfade" data-loop="true" data-keyboard="true"
     - @photos.each do |photo|
-      = image_tag photo.image_url.to_s
+      = image_tag photo.image_url(:thumb).to_s
