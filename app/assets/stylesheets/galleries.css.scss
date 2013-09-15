@@ -60,6 +60,17 @@ p {
   a {
     text-decoration: none;
   }
+  #logo {
+    position: fixed;
+    left: 20px;
+    top: 10px;
+    background: white;
+    padding: 5px;
+  }
+  #galleries {
+    margin-top: 100px;
+  }
+
 }
 
 .gallery {

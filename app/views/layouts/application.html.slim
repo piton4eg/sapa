@@ -10,14 +10,16 @@ body
   .row
     .span2
       #title
-        h1 = link_to 'SAPA', root_path
-        p Olga Markova
+        #logo
+          h1 = link_to 'SAPA', root_path
+          p Olga Markova
 
-        = render Gallery.all
-        - if session[:user_id]
-          = link_to 'New gallery', new_gallery_path, class: 'btn btn-success btn-standart'
-          = link_to 'All photos', photos_path, class: 'btn btn-primary btn-standart'
-          = link_to 'Logout', logout_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-standart'
+        #galleries
+          = render Gallery.all
+          - if session[:user_id]
+            = link_to 'New gallery', new_gallery_path, class: 'btn btn-success btn-standart'
+            = link_to 'All photos', photos_path, class: 'btn btn-primary btn-standart'
+            = link_to 'Logout', logout_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-standart'
     .other-html
       - flash.each do |key, value|
         = content_tag(:div, value, class: "alert alert-#{key}")
