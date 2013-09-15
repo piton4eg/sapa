@@ -1,6 +1,6 @@
 .gallery
   - if gallery.photos.first.present?
-    = link_to image_tag(gallery.photos.first.image_url(:thumb).to_s, class: "img-rounded"), request.parameters.merge(gallery: gallery)
+    = link_to image_tag(gallery.photos.first.image_url(:thumb).to_s, class: "img-rounded"), galleries_path(gallery: gallery)
 
 - if session[:user_id]
   = link_to edit_gallery_path(gallery) do
