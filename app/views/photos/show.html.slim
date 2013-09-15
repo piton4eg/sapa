@@ -1,11 +1,8 @@
 h2 = @photo.name
 
-.row
-  p = "Name: #{@photo.name}"
-  p = "Desc: #{@photo.description}"
-  p = image_tag @photo.image_url(:thumb).to_s
-  p = "Gallery: #{@photo.gallery.name}"
+p = "Desc: #{@photo.description}"
+p = image_tag @photo.image_url(:thumb).to_s
+p = "Gallery: #{@photo.gallery.name}"
 
-  = link_to "Edit", edit_photo_path(@photo)
-  br
-  = link_to "Gallery", galleries_path(gallery: @photo.gallery)
+= link_to "Edit", edit_photo_path(@photo), class: 'btn btn-warning btn-standart'
+= link_to "Gallery", galleries_path(gallery: @photo.gallery), class: 'btn btn-danger btn-standart'

@@ -22,8 +22,6 @@ gem 'jquery-rails-cdn'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'fog'
-#gem 'carrierwave_direct'
-#gem 'sidekiq'
 
 group :development, :test do
   gem 'sqlite3'
@@ -31,4 +29,8 @@ end
 
 group :production do
   gem 'pg', '~> 0.16.0'
+  gem 'rails_12factor'
 end
+
+gem 'bootstrap-sass', '2.3.2.0'
+

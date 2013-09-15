@@ -7,7 +7,17 @@ head
   = javascript_include_tag "application", "data-turbolinks-track" => true
   = csrf_meta_tags
 body
-  - flash.each do |key, value|
-    = content_tag(:div, value, class: "alert alert-#{key}")
-  h1 = link_to "SAPA - Photo by Olga Markova", root_path
-  = yield
+  .row
+    .span2
+      #title
+        h1 = link_to 'SAPA', root_path
+        p Olga Markova
+
+        .galleries
+          = render Gallery.all
+          = link_to 'New gallery', new_gallery_path, class: 'btn btn-success btn-standart'
+        = link_to 'All photos', photos_path, class: 'btn btn-primary btn-standart'
+    .other-html
+      - flash.each do |key, value|
+        = content_tag(:div, value, class: "alert alert-#{key}")
+      = yield

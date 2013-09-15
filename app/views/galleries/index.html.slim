@@ -1,12 +1,4 @@
-h2 Galleries
-= link_to 'New', new_gallery_path
-br
-= render @galleries
-br
-
-h2
-  = link_to 'Photos', photos_path
 #fotorama
-  .fotorama data-width="50%" data-max-height="50%" data-transition="crossfade" data-loop="true" data-keyboard="true"
+  .fotorama data-width="100%" data-max-height="95%" data-transition="crossfade" data-loop="true" data-keyboard="true"
     - @photos.each do |photo|
-      = image_tag photo.image_url(:thumb).to_s
+      = image_tag photo.image_url.to_s

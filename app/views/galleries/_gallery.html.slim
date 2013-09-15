@@ -1,5 +1,9 @@
-b = "Name: #{gallery.name} \n"
-p = "Description: #{gallery.description} \n"
+.gallery
+  - if gallery.photos.first.present?
+    = link_to image_tag(gallery.photos.first.image_url(:mini).to_s, class: "img-rounded"), request.parameters.merge(gallery: gallery)
 
-= link_to 'Edit', edit_gallery_path(gallery)
-= link_to 'Delete', gallery_path(gallery), method: :delete
+= link_to edit_gallery_path(gallery) do
+  i.icon-pencil
+= link_to gallery_path(gallery), method: :delete, confirm: 'You are sure?' do
+  i.icon-trash
+br

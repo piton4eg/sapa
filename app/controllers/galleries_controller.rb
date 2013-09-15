@@ -2,7 +2,6 @@ class GalleriesController < ApplicationController
   before_filter :find_gallery, only: [:show, :edit, :update, :destroy]
 
   def index
-    @galleries = Gallery.all
     if params[:gallery]
       gallery = Gallery.find(params[:gallery])
       @photos = gallery.photos

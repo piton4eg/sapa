@@ -1,10 +1,5 @@
 h2 Edit gallery
 
-.row
-  = render 'form'
+= render 'form'
 - if @photos.present?
   = render @photos
-
-br
-= link_to 'Back', :back
-
