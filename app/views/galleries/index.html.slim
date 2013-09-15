@@ -1,4 +1,4 @@
 #fotorama
-  .fotorama data-width="100%" data-max-height="95%" data-transition="crossfade" data-loop="true" data-keyboard="true"
+  .fotorama data-width="100%" data-max-height="95%" data-transition="crossfade" data-loop="true" data-keyboard="true" data-allowfullscreen="native" data-nav="false"
     - @photos.each do |photo|
-      = image_tag photo.image_url.to_s
+      = image_tag photo.image_url.to_s, data: { caption: photo.name + ': ' + photo.description }
