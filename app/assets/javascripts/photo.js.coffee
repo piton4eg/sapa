@@ -2,9 +2,12 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-$ ->
-  $('#galleries').css({'height': (($(window).height()) - 35)+'px'})
+equalHeight = ->
+  windowHeight = $(window).height()
+  $('#title #galleries').height(windowHeight - 135)
 
-  $(window).resize(
-    $('#galleries').css({'height': (($(window).height()) - 35)+'px'})
-  )
+$ ->
+  equalHeight()
+
+  $(window).resize ->
+    equalHeight()

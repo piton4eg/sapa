@@ -8,8 +8,8 @@ head
   = csrf_meta_tags
   meta name='yandex-verification' content='68825dbd2f8929c9'
 body
-  .row
-    .span2
+  .row1
+    .spa2.pull-left
       #title
         #logo
           h1 = link_to 'SAPA', root_path
@@ -25,3 +25,5 @@ body
       - flash.each do |key, value|
         = content_tag(:div, value, class: "alert alert-#{key}")
       = yield
+
+    .clearfix
