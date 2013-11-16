@@ -33,6 +33,6 @@ module Sapa
       end if File.exists?(env_file)
     end
 
-    config.assets.precompile += ['jquery.js']
+    config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif jquery.js)
   end
 end

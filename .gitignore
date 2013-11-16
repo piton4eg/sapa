@@ -17,5 +17,12 @@
 public/uploads/photo/*
 public/uploads/tmp/*
 .idea/*
-
+database.yml
+doc/
+*.swp
+*~
+.project
+.DS_Store
+.idea
+.secret
 /config/local_env.yml
