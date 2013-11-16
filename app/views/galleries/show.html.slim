@@ -1,9 +1,4 @@
 h2 = @gallery.name
+= link_to 'Edit', edit_gallery_path(@gallery) if session[:user_id].present?
 
-.row
-  p = "Name: #{@gallery.name}"
-  p = "Description: #{@gallery.description}"
-
-  = link_to 'List', galleries_path(gallery: @gallery)
-  br
-  = link_to 'Edit', edit_gallery_path(@gallery)
+= render @gallery.photos

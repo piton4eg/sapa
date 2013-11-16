@@ -2,45 +2,35 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// #title {
-//   margin-left: 20px;
-//   p {
-//     margin-top: -35px;
-//     padding-left: 5px;
-//   }
-//   a {
-//     text-decoration: none;
-//   }
-//   #logo {
-//     position: fixed;
-//     left: 20px;
-//     top: 0px;
-//     background: white;
-//     padding: 6px;
-//   }
-//   #galleries {
-//     margin-top: 100px;
-//     overflow-y: scroll;
-//     width: 140px;
-//   }
-//   overflow: hidden;
-//   width: 120px;
-// }
+img.photo {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
 
-// .gallery {
-//   margin-top: 10px;
-//   width: 110px;
-// }
+.fright {
+  float: right;
+}
 
-// .btn-standart {
-//   width: 80px;
-//   margin-top: 2px;
-//   margin-right: 2px;
-// }
+.clear {
+  clear: both;
+}
 
-// .other-html {
-//   margin-left: 160px;
-//   h2 {
-//     margin-top: 15px;
-//   }
-// }
+.nav-pills {
+  margin-left: auto ;
+  margin-right: auto ;
+  width: 560px;
+  li {
+    // padding: 0 3px;
+  }
+}
+
+.create_new_photo {
+  position: fixed;
+  right: 200px;
+  width: 130px;
+}
+
+.span4 {
+  display: inline;
+}

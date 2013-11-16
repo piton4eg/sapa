@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 ruby '2.0.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.1'
-gem 'pg', '~> 0.17.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
@@ -25,9 +24,15 @@ gem 'rmagick', '~> 2.13.2'
 gem 'fog', '~> 1.17.0'
 
 group :production do
+  gem 'pg', '~> 0.17.0'
   gem 'rails_12factor', '~> 0.0.2'
 end
 
+group :development, :test do
+  gem 'sqlite3', '~> 1.3.8'
+end
+
+
 gem 'bootstrap-sass', '~> 2.3.2.2'
-gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.1.2'
 gem 'newrelic_rpm', '~> 3.6.8.168'

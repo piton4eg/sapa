@@ -4,6 +4,10 @@ class User < ActiveRecord::Base
 
   has_secure_password
 
+  def avatar
+    Photo.where(id: photo_id).first || Photo.first
+  end
+
   private
   def ensure_an_admin_remains
     if User.count.zero?

@@ -1,4 +1,12 @@
 = provide(:title, 'About')
 
-h1 StaticPages#about
-p Find me in app/views/static_pages/about.html.slim
+h1 
+  | Обо мне
+  - if session[:user_id]
+    = link_to edit_user_path(@user) do
+      i.icon-pencil
+
+.avatar
+  = image_tag @user.avatar.image_url.to_s
+h2 
+  = @user.info

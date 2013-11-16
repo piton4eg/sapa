@@ -9,10 +9,10 @@ head
   = render 'layouts/shim'
   meta name='yandex-verification' content='68825dbd2f8929c9'
 body
-  = render 'layouts/header'
   div class="container"
+    = render 'layouts/header_pills'
     = yield
-    = render 'layouts/footer'
+    / = render 'layouts/footer'
 
   / .row1
   /   .spa2.pull-left

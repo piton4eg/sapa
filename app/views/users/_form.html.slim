@@ -9,11 +9,16 @@
 
   = f.label :name
   = f.text_field :name
+  = f.label :info
+  = f.text_area :info
+  = f.label :photo_id
+  = f.select :photo_id, Photo.all.map { |p| [p.name, p.id]}
+
   = f.label :password
   = f.password_field :password
   = f.label :password_confirmation
   = f.password_field :password_confirmation
   br
   = f.submit class: 'btn btn-primary btn-standart'
-  = link_to 'Back', users_path, class: 'btn btn-info btn-standart'
+  / = link_to 'Back', users_path, class: 'btn btn-info btn-standart'
 

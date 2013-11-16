@@ -1,17 +1,17 @@
-h2 Listing users
+h2 Список пользователей
 
 table class='table table-striped'
   tr
-    th Name
+    th Имя
     th
     th
 
   - @users.each do |user|
     tr
       td = user.name
-      td = link_to 'Edit', edit_user_path(user)
-      td = link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete
+      td = link_to 'Редактировать', edit_user_path(user)
+      td = link_to 'Удалить', user, :confirm => 'Вы уверены?', :method => :delete
 
 br
 
-= link_to 'New User', new_user_path, class: 'btn btn-success btn-standart'
+= link_to 'Создать пользователя', new_user_path, class: 'btn btn-success btn-standart'

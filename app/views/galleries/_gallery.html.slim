@@ -1,10 +1,11 @@
 .gallery
   - if gallery.photos.first.present?
-    = link_to image_tag(gallery.photos.first.image_url(:thumb).to_s, class: "img-rounded"), galleries_path(gallery: gallery)
+    = link_to image_tag(gallery.photos.first.image_url.to_s, class: 'photo'), gallery_path(gallery)
 
-- if session[:user_id]
-  = link_to edit_gallery_path(gallery) do
-    i.icon-pencil
-  = link_to gallery_path(gallery), method: :delete, data: { confirm: 'You are sure?' } do
-    i.icon-trash
-br
+  - if session[:user_id]
+    = link_to edit_gallery_path(gallery) do
+      i.icon-pencil
+    = link_to gallery_path(gallery), method: :delete, data: { confirm: 'You are sure?' } do
+      i.icon-trash
+  .gallery-name = gallery.name
+  .gallery-desc = gallery.description

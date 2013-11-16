@@ -28,6 +28,9 @@ class PhotosController < ApplicationController
 
   def update
     if @photo.update_attributes(photo_params)
+      if photo_params[:main_photo] == '1'
+        Photo.where("main_photo == 't' and id <> '?'", @photo.id).update_all(main_photo: false)
+      end
       flash[:success] = 'Photo edit success!'
       redirect_to photo_path(@photo)
     else
@@ -42,7 +45,7 @@ class PhotosController < ApplicationController
 
   private
   def photo_params
-    params.require(:photo).permit(:name, :description, :image, :gallery_id)
+    params.require(:photo).permit(:name, :description, :image, :gallery_id, :main_photo, :portfolio)
   end
 
   def find_photo

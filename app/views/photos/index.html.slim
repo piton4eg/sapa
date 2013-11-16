@@ -1,6 +1,4 @@
-h2 Create new photo?
-= link_to 'New photo', new_photo_path, class: 'btn btn-success btn-standart'
-= render @photos
-br
-h2 Create new photo?
-= link_to 'New photo', new_photo_path, class: 'btn btn-success btn-standart'
+.create_new_photo
+  p Создать новую фотографию?
+  = link_to 'Конечно!', new_photo_path, class: 'btn btn-success btn-standart'
+= render partial: 'edit_photo', collection: @photos, as: :photo

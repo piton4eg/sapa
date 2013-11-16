@@ -1,6 +1,3 @@
 h2 = photo.name
+= image_tag photo.image_url.to_s, class: 'photo'
 p = photo.description
-= image_tag photo.image_url(:thumb).to_s
-br
-= link_to 'Edit', edit_photo_path(photo), class: 'btn btn-warning btn-standart'
-= link_to 'Delete', photo_path(photo), method: :delete, confirm: 'Are you sure?', class: 'btn btn-danger btn-standart'

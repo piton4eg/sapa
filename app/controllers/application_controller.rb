@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
   def authorize
     unless User.find_by_id(session[:user_id])
-      redirect_to login_url, notice: 'Who are you?'
+      redirect_to '/404'
     end
   end
 end

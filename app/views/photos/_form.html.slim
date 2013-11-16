@@ -6,6 +6,13 @@
   = f.text_area :description
   = f.label :gallery_id
   = f.select :gallery_id, Gallery.all.collect { |g| [g.name, g.id] }
+  .field
+    = f.check_box :main_photo
+    = f.label 'На главную'
+  .field
+    = f.check_box :portfolio
+    = f.label 'В портфолио'
+
   br
   = f.file_field :image
   br
