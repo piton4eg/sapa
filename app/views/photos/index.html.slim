@@ -1,4 +1,9 @@
 .create_new_photo
   p Создать новую фотографию?
   = link_to 'Конечно!', new_photo_path, class: 'btn btn-success btn-standart'
-= render partial: 'edit_photo', collection: @photos, as: :photo
+
+- @photos.each_slice(3) do |array_of_3_items|
+  .row
+    - array_of_3_items.each do |photo|
+      .span4
+        = render partial: 'edit_photo', object: photo, as: :photo

@@ -12,7 +12,7 @@
   = f.label :info
   = f.text_area :info
   = f.label :photo_id
-  = f.select :photo_id, Photo.all.map { |p| [p.name, p.id]}
+  = f.select :photo_id, @photos.map { |p| [p.name, p.id]}
 
   = f.label :password
   = f.password_field :password

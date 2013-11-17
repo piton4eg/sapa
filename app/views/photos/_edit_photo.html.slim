@@ -1,5 +1,8 @@
 h2 = photo.name
 = image_tag photo.image_url(:thumb).to_s
 p = photo.description
-= link_to 'Редактировать', edit_photo_path(photo), class: 'btn btn-warning btn-standart'
-= link_to 'Удалить', photo_path(photo), method: :delete, confirm: 'Вы уверены?', class: 'btn btn-danger btn-standart'
+- if session[:user_id]
+  = link_to edit_photo_path(photo) do
+    i.icon-pencil
+  = link_to photo_path(photo), method: :delete, confirm: 'Вы уверены?' do
+    i.icon-trash

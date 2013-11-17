@@ -11,25 +11,6 @@ head
 body
   div class="container"
     = render 'layouts/header_pills'
+    - flash.each do |key, value|
+      = content_tag(:div, value, class: "alert alert-#{key}")
     = yield
-    / = render 'layouts/footer'
-
-  / .row1
-  /   .spa2.pull-left
-  /     #title
-  /       #logo
-  /         h1 = link_to 'SAPA', root_path
-  /         p Olga Markova
-
-  /       #galleries
-  /         = render Gallery.all
-  /         - if session[:user_id]
-  /           = link_to 'New gallery', new_gallery_path, class: 'btn btn-success btn-standart'
-  /           = link_to 'All photos', photos_path, class: 'btn btn-primary btn-standart'
-  /           = link_to 'Logout', logout_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-standart'
-  /   .other-html
-  /     - flash.each do |key, value|
-  /       = content_tag(:div, value, class: "alert alert-#{key}")
-  /     = yield
-
-  /   .clearfix

@@ -12,6 +12,9 @@
   p
     = f.label :avatar_id, 'Avatar'
     = f.select :avatar_id, @gallery.photos.map { |p| [p.name, p.id] }
+  p 
+    = f.check_box :hidden
+    = f.label :hidden
 
   = f.submit :submit, class: 'btn btn-primary btn-standart'
   = link_to "Back", :back, class: 'btn btn-info btn-standart'

@@ -6,7 +6,7 @@ class StaticPagesController < ApplicationController
   end
 
   def about
-    @user = User.last
+    @user = User.first
   end
 
   def portfolio
@@ -14,5 +14,18 @@ class StaticPagesController < ApplicationController
   end
 
   def contact
+    @message = Message.new
+  end
+
+  def send_mail
+    @message = Message.new(params[:message])
+    
+    if @message.valid?
+      NotificationsMailer.new_message(@message).deliver
+      redirect_to(root_path, :notice => "Сообщение будет рассмотрено в ближайшее время, спасибо!")
+    else
+      flash.now.alert = "Необходимо заполнить все поля!"
+      render :contact
+    end
   end
 end

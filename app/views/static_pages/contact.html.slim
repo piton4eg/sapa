@@ -1,3 +1,23 @@
 = provide(:title, 'Contact')
 
-h2 Хочешь связаться со мной?
+.row
+  div class="span6 offset3"
+    h2 Хочешь связаться со мной?
+
+    = form_for @message, :url => send_mail_path do |f|
+      .fields
+        .field
+          = f.label :name
+          = f.text_field :name
+        .field
+          = f.label :email
+          = f.text_field :email
+        .field
+          = f.label :subject
+          = f.text_field :subject
+        .field
+          = f.label :body
+          = f.text_area :body
+      .actions
+        = f.submit "Send"
+                

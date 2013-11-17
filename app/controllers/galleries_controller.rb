@@ -3,7 +3,7 @@ class GalleriesController < ApplicationController
   before_filter :find_gallery, only: [:show, :edit, :update, :destroy]
 
   def index
-    @galleries = Gallery.all
+    @galleries = Gallery.where(hidden: false)
   end
 
   def new
@@ -43,7 +43,7 @@ class GalleriesController < ApplicationController
 
   private
   def gallery_params
-    params.require(:gallery).permit(:name, :description, :avatar_id, :info)
+    params.require(:gallery).permit(:name, :description, :avatar_id, :info, :hidden)
   end
 
   def find_gallery

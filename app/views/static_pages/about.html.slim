@@ -1,12 +1,14 @@
 = provide(:title, 'About')
 
-h1 
-  | Обо мне
-  - if session[:user_id]
-    = link_to edit_user_path(@user) do
-      i.icon-pencil
+.row
+  div class="span6 offset3"
+    h1 
+      | Обо мне
+      - if session[:user_id]
+        = link_to edit_user_path(@user) do
+          i.icon-pencil
 
-.avatar
-  = image_tag @user.avatar.image_url.to_s
-h2 
-  = @user.info
+    .avatar
+      = image_tag @user.avatar.image_url.to_s
+    h2 
+      = @user.info

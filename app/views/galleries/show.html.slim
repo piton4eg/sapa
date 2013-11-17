@@ -1,4 +1,5 @@
 h2 = @gallery.name
-= link_to 'Edit', edit_gallery_path(@gallery) if session[:user_id].present?
-
+- if session[:user_id]
+  = link_to edit_gallery_path(@gallery) do
+      i.icon-pencil
 = render @gallery.photos

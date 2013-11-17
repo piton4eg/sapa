@@ -19,6 +19,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    @photos = Gallery.where(hidden: true).
   end
 
   # POST /users
