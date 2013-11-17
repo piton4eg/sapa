@@ -1,6 +1,4 @@
-class NotificationsMailer < ActionMailer::Base
-  default from: "from@example.com"
- 
+class NotificationsMailer < ActionMailer::Base 
   default :from => "noreply@markovaolga.ru"
   default :to => "markova.antonova@gmail.com"
  

@@ -86,6 +86,7 @@ Sapa::Application.configure do
     user_name: ENV["GMAIL_USERNAME"],
     password: ENV["GMAIL_PASS"],
     authentication: "plain",
-    enable_starttls_auto: true
+    enable_starttls_auto: true,
+    openssl_verify_mode: 'none'
     }
 end
