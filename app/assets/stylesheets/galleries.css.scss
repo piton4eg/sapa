@@ -20,15 +20,18 @@ img.photo {
   margin-left: auto ;
   margin-right: auto ;
   width: 560px;
-  li {
-    // padding: 0 3px;
-  }
 }
 
 .create_new_photo {
   position: fixed;
   right: 120px;
   width: 130px;
+}
+
+.create_new_gallery {
+  position: fixed;
+  right: 30px;
+  width: 130px;  
 }
 
 .span4 {
