@@ -13,9 +13,8 @@ class StaticPagesController < ApplicationController
     @photos = Photo.where(portfolio: true)
   end
 
-  def contact
-    @message = Message.new
-  end
+  # def contact
+  # end
 
   def send_mail
     @message = Message.new(params[:message])

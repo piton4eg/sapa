@@ -2,7 +2,7 @@ ul class="nav nav-pills"
   = current_link_to 'Главная', root_path
   = current_link_to 'Портфолио', portfolio_path
   = current_link_to 'Альбомы', galleries_path
-  = current_link_to 'Контакты', contact_path
+  / = current_link_to 'Контакты', contact_path
   = current_link_to 'Обо мне', about_path
   = current_link_to 'Фотографии', photos_path if session[:user_id].present?
 .clear
