@@ -1,9 +1,8 @@
 .create_new_gallery
-  p Создать новый альбом?
-  = link_to 'Конечно!', new_gallery_path, class: 'btn btn-success btn-standart'
+  p = t(:gallery_create_question)
+  = link_to t(:gallery_create_link), new_gallery_path, class: 'btn btn-success btn-standart'
 
 - @galleries.each_slice(3) do |array_of_3_items|
   .row
     - array_of_3_items.each do |gallery|
-      .span4
-        = render gallery      
+      .span4 = render gallery      

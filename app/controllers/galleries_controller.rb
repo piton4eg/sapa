@@ -3,7 +3,7 @@ class GalleriesController < ApplicationController
   before_filter :find_gallery, only: [:show, :edit, :update, :destroy]
 
   def index
-    @galleries = Gallery.where(hidden: false)
+    @galleries = Gallery.opened
   end
 
   def new
@@ -13,7 +13,7 @@ class GalleriesController < ApplicationController
   def create
     @gallery = Gallery.new(gallery_params)
     if @gallery.save
-      flash[:success] = 'Gallery save success!'
+      flash[:success] = t(:gallery_save_success) 
       redirect_to gallery_path(@gallery)
     else
       render :new
@@ -29,7 +29,7 @@ class GalleriesController < ApplicationController
 
   def update
     if @gallery.update_attributes(gallery_params)
-      flash[:success] = 'Gallery edit success!'
+      flash[:success] = t(:gallery_edit_success)
       redirect_to gallery_path(@gallery)
     else
       render :edit
@@ -49,5 +49,4 @@ class GalleriesController < ApplicationController
   def find_gallery
     @gallery = Gallery.find(params[:id])
   end
-
 end

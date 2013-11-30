@@ -13,7 +13,7 @@ class PhotosController < ApplicationController
   def create
     @photo = Photo.new(photo_params)
     if @photo.save
-      flash[:success] = 'Photo save success!'
+      flash[:success] = t(:photo_save_success) 
       redirect_to photo_path(@photo)
     else
       render :new
@@ -28,10 +28,11 @@ class PhotosController < ApplicationController
 
   def update
     if @photo.update_attributes(photo_params)
+      # На главной может быть только одна фотография
       if photo_params[:main_photo] == '1'
-        Photo.where("main_photo == 't' and id <> '?'", @photo.id).update_all(main_photo: false)
+        Photo.on_main.without_photo(@photo.id).update_all(main_photo: false)
       end
-      flash[:success] = 'Photo edit success!'
+      flash[:success] = t(:photo_edit_success)
       redirect_to photo_path(@photo)
     else
       render :edit

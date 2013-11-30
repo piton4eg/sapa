@@ -7,4 +7,8 @@ class Photo < ActiveRecord::Base
   def image_name
     File.basename(image.path || image.filename) if image
   end
+
+  scope :on_main, -> { where(main_photo: true) }
+  scope :in_portfolio, -> { where(portfolio: true) }
+  scope :without_photo, -> (id) { where.not(id: id) }
 end

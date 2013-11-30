@@ -5,12 +5,12 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by_name(params[:name])
+    user = User.find_by(name: params[:name])
     if user and user.authenticate(params[:password])
       session[:user_id] = user.id
       redirect_to root_url
     else
-      redirect_to login_url, alert: "I'm sorry, I don't know you"
+      redirect_to login_url, alert: t(:unknown_authorize)
     end
   end
 

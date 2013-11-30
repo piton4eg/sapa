@@ -1,0 +1,10 @@
+ru:
+  gallery_save_success: Альбом успешно сохранен
+  gallery_edit_success: Альбом успешно изменен
+  gallery_create_link: Конечно
+  gallery_create_question: Создать новый альбом?
+  photo_save_success: Фотография успешно сохранена
+  photo_edit_success: Фотография успешно изменена
+  photo_create_link: Конечно
+  photo_create_question: Создать новую фотографию?
+  unknown_authorize: Неудачная попытка авторизации
