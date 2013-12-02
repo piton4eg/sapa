@@ -1,0 +1,4 @@
+footer.center
+  .block © 2013 Markova Olga - All rights reserved
+  .down My images may not be reproduced in any form without my written permission
+  /= logged_in? ? link_to('Выйти', logout_path, method: 'delete', data: { confirm: 'Вы уверены?' }) : link_to('Войти', login_path)

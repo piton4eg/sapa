@@ -1,12 +1,11 @@
-= provide(:title, 'About')
+= provide(:title, 'About me')
 
 .row
-  div class="span6 offset3"
-    h1 
-      | Обо мне
-      - if session[:user_id]
-        = link_to edit_user_path(@user) do
-          i.icon-pencil
+  .span9.offset1
+    h1.center Обо мне
+    - if logged_in?
+      = link_to edit_user_path(@user) do
+        i.icon-pencil
 
     .avatar
       = image_tag @user.avatar.image_url.to_s

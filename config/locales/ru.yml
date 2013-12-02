@@ -8,3 +8,7 @@ ru:
   photo_create_link: Конечно
   photo_create_question: Создать новую фотографию?
   unknown_authorize: Неудачная попытка авторизации
+  new_session: Авторизация
+  new_session_name: Имя
+  new_session_password: Пароль
+  new_session_submit: Войти

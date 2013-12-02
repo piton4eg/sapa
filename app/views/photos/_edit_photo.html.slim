@@ -1,7 +1,7 @@
 h2 = photo.name
 = image_tag photo.image_url(:thumb).to_s
 p = photo.description
-- if session[:user_id]
+- if logged_in?
   = link_to edit_photo_path(photo) do
     i.icon-pencil
   = link_to photo_path(photo), method: :delete, confirm: 'Вы уверены?' do

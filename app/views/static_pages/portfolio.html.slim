@@ -1,3 +1,4 @@
 = provide(:title, 'Portfolio')
 
-= render @photos
+.portfolio
+  = render partial: 'photos/portfolio_photo', collection: @photos, as: :photo

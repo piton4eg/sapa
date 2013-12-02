@@ -2,15 +2,11 @@ doctype html
 html
 head
   title = full_title(yield(:title))
-  = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
-  = jquery_include_tag :google
-  = javascript_include_tag "application", "data-turbolinks-track" => true
-  = csrf_meta_tags
-  = render 'layouts/shim'
-  meta name='yandex-verification' content='68825dbd2f8929c9'
+  = render 'layouts/meta'
 body
-  div class="container"
-    = render 'layouts/header_pills'
-    - flash.each do |key, value|
-      = content_tag(:div, value, class: "alert alert-#{key}")
-    = yield
+  /div class="container"
+  = render 'layouts/header'
+  - flash.each do |key, value|
+    = content_tag(:div, value, class: "alert alert-#{key}")
+  = yield
+  = render 'layouts/footer'

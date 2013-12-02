@@ -12,4 +12,26 @@
  *= require_tree .
  */
 
-@import 'bootstrap'
+@import 'bootstrap';
+
+@font-face {
+  font-family: 'BebasNeue';
+  src: url('BebasNeue.otf');
+}
+
+@font-face {
+  font-family: 'BebasNeueRus';
+  src: url('AA-BebasNeue.ttf');
+}
+
+@font-face {
+  font-family: 'PalatinoRegular';
+  src: url('PalatinoLinotypeRegular.ttf');
+}
+
+@font-face {
+  font-family: 'Palatino';
+  src: url('Palatino.ttf');
+}
+
+
