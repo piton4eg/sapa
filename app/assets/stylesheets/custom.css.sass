@@ -1,3 +1,18 @@
+@font-face
+  font-family: 'BebasNeue'
+  src: url('BebasNeue.otf')
+
+@font-face
+  font-family: 'BebasNeueRus'
+  src: url('AA-BebasNeue.ttf')
+
+@font-face
+  font-family: 'PalatinoRegular'
+  src: url('PalatinoLinotypeRegular.ttf')
+
+@font-face
+  font-family: 'Palatino'
+  src: url('Palatino.ttf')
 /* universal */
 
 html
@@ -52,7 +67,6 @@ p
     a
       text-decoration: underline
 
-
 /* footer */
 footer
   margin-top: 50px
@@ -62,7 +76,7 @@ footer
   letter-spacing: 1px
   text-transform: uppercase
   .block
-    width: 50%
+    width: 100%
     margin-left: auto
     margin-right: auto
     background-color: lightgray
@@ -103,16 +117,46 @@ footer a:hover
       text-decoration: none
       color: black
 
-/* Session */
-.new-session
+.my-form
   input
     width: 95%
-    text-align: center
+  input[type="checkbox"]
+    width: 15px
+    margin-bottom: 8px
+    margin-right: 6px
+  input[type="submit"]
+    margin-top: 10px
+  textarea
+    width: 95%
   input.btn
     width: 200px
+  .checkbox-title
+    display: inline
 
 .portfolio
-  width: 85%
   margin-left: auto
   margin-right: auto
   max-width: 900px
+
+.profile_avatar
+  margin-bottom: 10px
+
+.portfolio
+  max-height: "100%"
+
+.gallery
+  img
+    margin: 10px
+  h2
+    padding-top: 10px
+  background-color: lightgray
+  margin-bottom: 20px
+
+.avatar
+  img
+    margin: 10px
+
+.edit-gallery
+  padding: 5px
+  margin-bottom: 10px
+  background-color: lightgray

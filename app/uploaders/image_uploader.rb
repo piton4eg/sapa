@@ -1,23 +1,17 @@
-# encoding: utf-8
-
 class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::RMagick
+  include CarrierWave::MimeTypes
 
   storage :fog
 
-  include CarrierWave::MimeTypes
   process :set_content_type
+  process convert: 'png'
 
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
-  # Create different versions of your uploaded files:
-  version :thumb do
-     process :resize_to_limit => [200, 200]
-  end
-
-  version :mini do
-    process :resize_to_limit => [100, 100]
+  def filename
+    super.chomp(File.extname(super)) + '.png' if original_filename.present?
   end
 end

@@ -1,8 +1,5 @@
-h2 = photo.name
-= image_tag photo.image_url(:thumb).to_s
-p = photo.description
-- if logged_in?
-  = link_to edit_photo_path(photo) do
-    i.icon-pencil
-  = link_to photo_path(photo), method: :delete, confirm: 'Вы уверены?' do
-    i.icon-trash
+.edit-photo
+  h3 = photo.name
+  = image_tag photo.image_url(:thumb).to_s
+  p
+    = link_to t(:edit_title), edit_photo_path(photo)

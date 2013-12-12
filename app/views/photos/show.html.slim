@@ -1,6 +1,5 @@
 h2 = @photo.name
 
-p = "Desc: #{@photo.description}"
 p = image_tag @photo.image_url(:thumb).to_s
 p = "Gallery: #{@photo.gallery.name}"
 

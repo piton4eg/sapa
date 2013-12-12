@@ -3,6 +3,7 @@ ru:
   gallery_edit_success: Альбом успешно изменен
   gallery_create_link: Конечно
   gallery_create_question: Создать новый альбом?
+  new_gallery_title: Новый альбом
   photo_save_success: Фотография успешно сохранена
   photo_edit_success: Фотография успешно изменена
   photo_create_link: Конечно
@@ -12,3 +13,45 @@ ru:
   new_session_name: Имя
   new_session_password: Пароль
   new_session_submit: Войти
+  delete_session_submit: Выйти
+  user_create_success: Пользователь успешно создан
+  user_edit_success: Пользователь успешно изменен
+  profile_edit_title: Редактирование профиля
+  photo_edit_title: Редактирование фотографий
+  galleries_edit_title: Редактирование альбомов
+  edit_title: Редактировать
+#  user_delete_success: Пользователь удален
+  bad_request: Произошли ошибки
+  activerecord:
+    models:
+      user: Пользователь
+      gallery: Альбом
+    attributes:
+      user:
+        name: Имя
+        info: О себе
+        password: Пароль
+        password_confirmation: Подтверждение пароля
+        avatar: Фотография
+        remote_avatar_url: Загрузить по ссылке
+        remove_avatar: Удалить старую фотографию
+      gallery:
+        name: Название
+        info: Описание
+        avatar_id: Обложка
+        hidden: Скрыть
+    errors:
+      models:
+        user:
+          attributes:
+            password_confirmation:
+              confirmation: не совпадает
+              blank: не может быть пустым
+  helpers:
+    submit:
+      user:
+        create: Создать
+        update: Применить
+      gallery:
+        create: Создать
+        update: Применить

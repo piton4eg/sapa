@@ -1,9 +1,10 @@
 class GalleriesController < ApplicationController
-  skip_before_filter :authorize, only: [:index]
+  skip_before_filter :authorize, only: [:index, :show]
   before_filter :find_gallery, only: [:show, :edit, :update, :destroy]
 
   def index
     @galleries = Gallery.opened
+    @galleries = @galleries.with_photos unless session[:user_id].present?
   end
 
   def new
@@ -43,7 +44,7 @@ class GalleriesController < ApplicationController
 
   private
   def gallery_params
-    params.require(:gallery).permit(:name, :description, :avatar_id, :info, :hidden)
+    params.require(:gallery).permit(:name, :avatar_id, :info, :hidden)
   end
 
   def find_gallery

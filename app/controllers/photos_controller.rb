@@ -7,14 +7,18 @@ class PhotosController < ApplicationController
   end
 
   def new
-    @photo = Photo.new
+    @photo = Photo.new(gallery_id: params[:gallery])
   end
 
   def create
     @photo = Photo.new(photo_params)
     if @photo.save
-      flash[:success] = t(:photo_save_success) 
-      redirect_to photo_path(@photo)
+      flash[:success] = t(:photo_save_success)
+      if @photo.gallery.present?
+        redirect_to gallery_path(@photo.gallery)
+      else
+        redirect_to photo_path(@photo)
+      end
     else
       render :new
     end
@@ -24,6 +28,7 @@ class PhotosController < ApplicationController
   end
 
   def edit
+
   end
 
   def update
@@ -46,7 +51,7 @@ class PhotosController < ApplicationController
 
   private
   def photo_params
-    params.require(:photo).permit(:name, :description, :image, :gallery_id, :main_photo, :portfolio)
+    params.require(:photo).permit(:name, :image, :gallery_id, :main_photo, :portfolio)
   end
 
   def find_photo

@@ -1,2 +1,11 @@
-h2 Edit photo
-= render 'form'
+.span4
+  h2 Редактирование фотографии
+  = form_for @photo, html: { multipart: true } do |f|
+    = render 'form', f: f
+
+    br
+    = f.submit class: 'btn btn-primary btn-standart'
+    = link_to 'Back', :back, class: 'btn btn-info btn-standart'
+
+.span8
+  = image_tag(@photo.image_url(:thumb)) if @photo.image?

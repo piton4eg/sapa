@@ -1,4 +1,7 @@
-= provide(:title, 'Portfolio')
+- content_for(:without_container, true)
+= provide(:title, 'Портфолио')
 
 .portfolio
-  = render partial: 'photos/portfolio_photo', collection: @photos, as: :photo
+  #fotorama
+    .fotorama data-width="100%" data-max-height="100%" data-transition="crossfade" data-loop="true" data-keyboard="true"
+      = render partial: 'photos/portfolio_photo', collection: @photos, as: :photo

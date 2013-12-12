@@ -1,3 +1,6 @@
-h2 Редактирование
-
-= render 'form'
+h1.center = t(:profile_edit_title)
+.my-form
+  = render 'form'
+hr
+.center
+  = link_to t(:delete_session_submit), logout_path, method: :delete, class: 'btn btn-primary btn-standart'

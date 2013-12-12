@@ -1,24 +1,27 @@
-= form_for @user do |f|
-  - if @user.errors.any?
-    #error_explanation
-      .alert.alert-error
-        = "#{pluralize(@user.errors.count, "error")} prohibited this user from being saved:"
-        ul
-          - @user.errors.full_messages.each do |message|
-            li = message
+= form_for @user, url: profile_path, html: {multipart: true} do |f|
+  = render partial: 'shared/error_messages', locals: { obj: @user }
 
-  = f.label :name
-  = f.text_field :name
-  = f.label :info
-  = f.text_area :info
-  = f.label :photo_id
-  = f.select :photo_id, @photos.map { |p| [p.name, p.id]}
+  .span4.offset1
+    = f.label :name
+    = f.text_field :name
+    = f.label :info
+    = f.text_area :info
+    hr
+    = f.label :password
+    = f.password_field :password
+    = f.label :password_confirmation
+    = f.password_field :password_confirmation
 
-  = f.label :password
-  = f.password_field :password
-  = f.label :password_confirmation
-  = f.password_field :password_confirmation
-  br
-  = f.submit class: 'btn btn-primary btn-standart'
-  / = link_to 'Back', users_path, class: 'btn btn-info btn-standart'
+  .span5.offset1
+    = f.label :avatar
+    = f.hidden_field :avatar_cache
+    .profile_avatar = image_tag(@user.avatar_url) if @user.avatar?
+    =' f.file_field :avatar
+    ' или
+    = f.label :remote_avatar_url
+    = f.text_field :remote_avatar_url
 
+    = f.check_box :remove_avatar
+    = f.label :remove_avatar, class: 'checkbox-title'
+  .center
+    = f.submit class: 'btn btn-primary btn-standart'

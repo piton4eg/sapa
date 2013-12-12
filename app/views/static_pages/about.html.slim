@@ -1,13 +1,6 @@
-= provide(:title, 'About me')
-
-.row
-  .span9.offset1
-    h1.center Обо мне
-    - if logged_in?
-      = link_to edit_user_path(@user) do
-        i.icon-pencil
-
-    .avatar
-      = image_tag @user.avatar.image_url.to_s
-    h2 
-      = @user.info
+= provide(:title, 'Обо мне')
+.span9.offset1
+  .avatar.center
+    = image_tag @user.avatar_url.to_s
+  p
+    = @user.info

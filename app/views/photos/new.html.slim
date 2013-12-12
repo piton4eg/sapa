@@ -1,4 +1,21 @@
 h2 New photo
 
 .row
-  = render 'form'
+  = form_for @photo, html: { multipart: true } do |f|
+    = render 'form', f: f
+
+    br
+    = f.hidden_field :image_cache
+    =' f.file_field :image
+    ' или
+    = f.label :remote_image_url
+    = f.text_field :remote_image_url
+
+    = f.check_box :remove_image
+    = f.label :remove_image, class: 'checkbox-title'
+
+    br
+    = f.submit class: 'btn btn-primary btn-standart'
+    = link_to 'Back', :back, class: 'btn btn-info btn-standart'
+
+    = image_tag(@photo.image_url(:thumb)) if @photo.image?

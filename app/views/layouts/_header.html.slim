@@ -2,7 +2,9 @@ ul#menu
   = current_link_to 'Главная', root_path
   = current_link_to 'Портфолио', portfolio_path
   = current_link_to 'Альбомы', galleries_path
-  = current_link_to 'Контакты', about_path
+  = current_link_to 'Обо мне', about_path
   = current_link_to 'Блог', '#'
-  = current_link_to 'Профиль', photos_path if logged_in?
+  - if logged_in?
+    /= current_link_to 'Фотографии', photos_path
+    = current_link_to 'Профиль', profile_path
 .clear

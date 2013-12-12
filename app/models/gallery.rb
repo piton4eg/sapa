@@ -1,13 +1,14 @@
 class Gallery < ActiveRecord::Base
-  validates :name, :description, presence: true
+  validates :name, presence: true
 
   has_many :photos, dependent: :destroy
 
   def avatar
     # todo: если нет фотографий - пустую картинку
-    Photo.where(id: avatar_id).first || Photo.first
+    photos.find_by(id: avatar_id) || photos.first
   end
 
   scope :opened, -> { where(hidden: false) }
   scope :hidden, -> { where(hidden: true) }
+  scope :with_photos, -> { select('DISTINCT galleries.*').joins(:photos) }
 end

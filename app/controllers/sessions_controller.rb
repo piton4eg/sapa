@@ -1,8 +1,9 @@
 class SessionsController < ApplicationController
+  include ApplicationHelper
   skip_before_filter :authorize
 
   def new
-
+    redirect_to profile_path if logged_in?
   end
 
   def create

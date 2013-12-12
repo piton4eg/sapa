@@ -1,10 +1,9 @@
-= provide(:title, 'Galleries')
+= provide(:title, 'Альбомы')
 
-.create_new_gallery
-  p = t(:gallery_create_question)
-  = link_to t(:gallery_create_link), new_gallery_path, class: 'btn btn-success btn-standart'
-
+- if logged_in?
+  = link_to t(:new_gallery_title), new_gallery_path
+/= render @galleries
 - @galleries.each_slice(3) do |array_of_3_items|
   .row
     - array_of_3_items.each do |gallery|
-      .span4 = render gallery      
+      .span4 = render gallery

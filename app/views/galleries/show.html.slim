@@ -1,5 +1,2 @@
-h2 = @gallery.name
-- if logged_in?
-  = link_to edit_gallery_path(@gallery) do
-      i.icon-pencil
-= render @gallery.photos
+h1.center = @gallery.name
+= render partial: 'photos/full_photo', collection: @gallery.photos.with_image, as: :photo

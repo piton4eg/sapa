@@ -1,20 +1,13 @@
-= form_for @photo, html: { multipart: true } do |f|
-  = render partial: 'shared/error_messages', locals: { obj: @photo }
-  = f.label :name, 'Name'
+= render partial: 'shared/error_messages', locals: { obj: @photo }
+p
+  = f.label :name
   = f.text_field :name
-  = f.label :description, 'Description'
-  = f.text_area :description
+p
   = f.label :gallery_id
-  = f.select :gallery_id, Gallery.all.collect { |g| [g.name, g.id] }
-  .field
-    = f.check_box :main_photo
-    = f.label 'На главную'
-  .field
-    = f.check_box :portfolio
-    = f.label 'В портфолио'
-
-  br
-  = f.file_field :image
-  br
-  = f.submit class: 'btn btn-primary btn-standart'
-  = link_to 'Back', :back, class: 'btn btn-info btn-standart'
+  = f.select :gallery_id, Gallery.all.collect { |g| [g.name, g.id] }, include_blank: 'Без альбома'
+p
+  = f.check_box :main_photo
+  = f.label :main_photo
+p
+  = f.check_box :portfolio
+  = f.label :portfolio

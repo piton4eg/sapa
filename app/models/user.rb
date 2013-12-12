@@ -1,11 +1,13 @@
 class User < ActiveRecord::Base
-  validates :name, presence: true, uniqueness: true
+  validates :name, presence: true
   after_destroy :ensure_an_admin_remains
 
   has_secure_password
 
-  def avatar
-    Photo.where(id: photo_id).first || Photo.first
+  mount_uploader :avatar, AvatarUploader
+
+  def avatar_name
+    File.basename(avatar.path || avatar.filename) if avatar
   end
 
   private

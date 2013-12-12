@@ -1,5 +1,8 @@
-h2 Редактировать альбом
-
-= render 'form'
-- if @photos.present?
-  = render @photos
+.span4
+  h2 Редактирование альбома
+  = render 'form'
+.span8
+  = link_to 'New photo', new_photo_path(gallery: @gallery)
+  - if @photos.present?
+    h2 Фотографии
+    = render partial: 'photos/edit_photo', collection: @photos, as: :photo

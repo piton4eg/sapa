@@ -3,10 +3,18 @@ html
 head
   title = full_title(yield(:title))
   = render 'layouts/meta'
+
 body
-  /div class="container"
   = render 'layouts/header'
+
   - flash.each do |key, value|
     = content_tag(:div, value, class: "alert alert-#{key}")
-  = yield
+
+  - if content_for?(:without_container)
+    = yield
+  - else
+    .container
+      .row
+        = yield
+
   = render 'layouts/footer'
