@@ -12,4 +12,8 @@ class ApplicationController < ActionController::Base
       redirect_to '/404'
     end
   end
+
+  def logged_in?
+    session[:user_id].present?
+  end
 end

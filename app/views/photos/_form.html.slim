@@ -1,13 +1,8 @@
 = render partial: 'shared/error_messages', locals: { obj: @photo }
-p
-  = f.label :name
-  = f.text_field :name
-p
-  = f.label :gallery_id
-  = f.select :gallery_id, Gallery.all.collect { |g| [g.name, g.id] }, include_blank: 'Без альбома'
-p
-  = f.check_box :main_photo
-  = f.label :main_photo
-p
-  = f.check_box :portfolio
-  = f.label :portfolio
+= f.input :name
+= f.select :gallery_id, Gallery.all.collect { |g| [g.name, g.id] }, include_blank: 'Без альбома'
+br
+= f.check_box :main_photo
+= f.label :main_photo
+= f.check_box :portfolio
+= f.label :portfolio

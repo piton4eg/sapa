@@ -3,8 +3,11 @@ class GalleriesController < ApplicationController
   before_filter :find_gallery, only: [:show, :edit, :update, :destroy]
 
   def index
-    @galleries = Gallery.opened
-    @galleries = @galleries.with_photos unless session[:user_id].present?
+    @galleries = if logged_in?
+      Gallery.all
+    else
+      Gallery.opened.with_photos
+    end
   end
 
   def new

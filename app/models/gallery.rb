@@ -8,6 +8,10 @@ class Gallery < ActiveRecord::Base
     photos.find_by(id: avatar_id) || photos.first
   end
 
+  def hidden?
+    hidden
+  end
+
   scope :opened, -> { where(hidden: false) }
   scope :hidden, -> { where(hidden: true) }
   scope :with_photos, -> { select('DISTINCT galleries.*').joins(:photos) }

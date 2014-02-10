@@ -1,13 +1,8 @@
-= form_for @gallery, html: { multipart: true } do |f|
+= simple_form_for @gallery, html: { multipart: true } do |f|
   = render partial: 'shared/error_messages', locals: { obj: @gallery }
-  p
-    = f.label :name
-    = f.text_field :name
-  p
-    = f.label :info
-    = f.text_area :info
-  p
-    = f.check_box :hidden
-    = f.label :hidden
+  = f.input :name
+  = f.input :info
+  = f.check_box :hidden
+  = f.label :hidden
 
-  = f.submit class: 'btn btn-primary btn-standart'
+  = f.button :submit

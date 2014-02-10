@@ -3,6 +3,7 @@
     - if gallery.avatar.present?
       = link_to image_tag(gallery.avatar.image_url(:thumb).to_s, class: 'photo'), gallery_path(gallery)
       h2 = gallery.name
+      b = "Скрытый альбом" if gallery.hidden?
       p = gallery.info
       - if logged_in?
         = link_to t(:edit_title), edit_gallery_path(gallery)
