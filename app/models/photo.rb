@@ -9,7 +9,7 @@ class Photo < ActiveRecord::Base
   end
 
   scope :on_main, -> { where(main_photo: true) }
-  scope :in_portfolio, -> { where(portfolio: true) }
+  # scope :in_portfolio, -> { where(portfolio: true) }
   scope :without_photo, -> (id) { where.not(id: id) }
   scope :with_image, -> { where.not(image: nil) }
 end

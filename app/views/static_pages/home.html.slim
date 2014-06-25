@@ -1,3 +1,11 @@
-- content_for(:without_container, true)
+.main-header
+	.main-logo.main-text Маркова Ольга
+	.main-links.main-text 
+		= link_to 'Альбомы', galleries_path
+		= link_to 'Обо мне', '#'
+.clear
+
 .home-photo.center
-  = image_tag @photo.image_url.to_s, class: 'photo'
+  .fotorama	data-width="100%" data-max-height="100%" data-transition="crossfade" data-loop="true" data-keyboard="true" data-nav="thumbs" data-fit="cover" 
+    - @photos.each do |photo|
+    	= image_tag photo.image_url.to_s, class: 'photo'

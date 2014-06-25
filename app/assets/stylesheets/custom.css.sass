@@ -1,25 +1,8 @@
-@font-face
-  font-family: 'BebasNeue'
-  src: url('BebasNeue.otf')
-
-@font-face
-  font-family: 'BebasNeueRus'
-  src: url('AA-BebasNeue.ttf')
-
-@font-face
-  font-family: 'PalatinoRegular'
-  src: url('PalatinoLinotypeRegular.ttf')
-
-@font-face
-  font-family: 'Palatino'
-  src: url('Palatino.ttf')
+@import url(http://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,700&subset=cyrillic-ext,latin)
 /* universal */
 
 html
   overflow-y: auto
-
-body
-  padding-top: 45px
 
 textarea
   resize: vertical
@@ -33,7 +16,7 @@ textarea
 /* typography */
 
 h1, h2, h3, h4, h5, h6
-  font-family: BebasNeue, BebasNeueRus
+  font-family: 'Fira Sans', sans-serif
   line-height: 1
 
 h1
@@ -48,24 +31,35 @@ p
   font-size: 1.1em
   line-height: 1.7em
 
-#menu
-  margin-left: 40px
-  font-family: Palatino
-  text-transform: uppercase
-  font-size: 1.2em
-  margin-bottom: 50px
-  letter-spacing: 2px
+/* Header */
 
-  li
-    list-style: none
-    outline-style: none
-    display: inline
-    padding: 0 15px
-    a
-      color: black
-  li.active
-    a
-      text-decoration: underline
+.main-header
+  position: absolute
+  margin-top: 20px
+  z-index: 100
+  left: 0
+  right: 0
+
+.main-text
+  font-family: 'Fira Sans', sans-serif
+  text-transform: uppercase
+  font-size: 2.2em
+  letter-spacing: 2px
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.5)
+  color: white
+
+.main-logo
+  margin-left: 50px
+  z-index: 100
+  float: left
+
+.main-links  
+  float: right
+  margin-right: 50px
+  a 
+    margin-right: 15px
+    text-decoration: none
+    color: white
 
 /* footer */
 footer
@@ -93,7 +87,6 @@ footer a:hover
 
 /* Home */
 .home-photo
-  height: 500px
   width: 100%
   overflow: hidden
   position: relative

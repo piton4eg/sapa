@@ -5,16 +5,4 @@ head
   = render 'layouts/meta'
 
 body
-  = render 'layouts/header'
-
-  - flash.each do |key, value|
-    = content_tag(:div, value, class: "alert alert-#{key}")
-
-  - if content_for?(:without_container)
-    = yield
-  - else
-    .container
-      .row
-        = yield
-
-  = render 'layouts/footer'
+  = yield
