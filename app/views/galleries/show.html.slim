@@ -1,2 +1,8 @@
-h1.center = @gallery.name
-= render partial: 'photos/full_photo', collection: @gallery.photos.with_image, as: :photo
+.main-header
+  .main-logo.main-text = @gallery.name
+.clear
+
+.home-photo.center
+  .fotorama	data-width="100%" data-max-height="100%" data-transition="crossfade" data-loop="true" data-keyboard="true" data-nav="thumbs" data-fit="cover" data-allowfullscreen="native"
+    - @gallery.photos.with_image.each do |photo|
+    	= image_tag photo.image_url.to_s, class: 'photo'

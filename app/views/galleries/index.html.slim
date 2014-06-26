@@ -2,8 +2,12 @@
 
 - if logged_in?
   = link_to t(:new_gallery_title), new_gallery_path
-/= render @galleries
-- @galleries.each_slice(3) do |array_of_3_items|
-  .row
-    - array_of_3_items.each do |gallery|
-      .span4 = render gallery
+
+.center-header.center
+	h1 Альбомы
+
+.container
+	.row
+		- @galleries.each do |gallery|
+		  .col-md-6
+		    = render gallery

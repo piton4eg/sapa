@@ -3,11 +3,7 @@ class GalleriesController < ApplicationController
   before_filter :find_gallery, only: [:show, :edit, :update, :destroy]
 
   def index
-    @galleries = if logged_in?
-      Gallery.all
-    else
-      Gallery.opened.with_photos
-    end
+    @galleries = available_galleries
   end
 
   def new
@@ -51,6 +47,10 @@ class GalleriesController < ApplicationController
   end
 
   def find_gallery
-    @gallery = Gallery.find(params[:id])
+    @gallery = available_galleries.find(params[:id])
+  end
+
+  def available_galleries
+    @available_galleries ||= logged_in? ? Gallery.all : Gallery.opened.with_photos
   end
 end
