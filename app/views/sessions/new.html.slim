@@ -1,11 +1,14 @@
-.span4.offset4
-  h1.center = t(:new_session)
-  .my-form
-    = form_tag do
-      = label_tag :name, t(:new_session_name)
-      = text_field_tag :name, params[:name]
+.container
 
-      = label_tag :password, t(:new_session_password)
-      = password_field_tag :password, params[:password]
+    .span4.offset4
+      h1.center = t(:new_session)
+      / .my-form
+      = form_tag do
+        .form-group
+          = label_tag :name, t(:new_session_name)
+          = text_field_tag :name, params[:name], class: 'form-control'
+        .form-group
+          = label_tag :password, t(:new_session_password)
+          = password_field_tag :password, params[:password], class: 'form-control'
 
-      .center = submit_tag t(:new_session_submit), class: 'btn btn-primary btn-standart'
+        .center = submit_tag t(:new_session_submit), class: 'btn btn-primary btn-standart'
