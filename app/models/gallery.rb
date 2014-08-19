@@ -14,5 +14,5 @@ class Gallery < ActiveRecord::Base
 
   scope :opened, -> { where(hidden: false) }
   scope :hidden, -> { where(hidden: true) }
-  scope :with_photos, -> { select('DISTINCT galleries.*').joins(:photos) }
+  scope :with_photos, -> { joins(:photos) }
 end

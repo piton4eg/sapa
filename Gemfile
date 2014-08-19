@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 ruby '2.0.0'
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.1'
+gem 'rails', '~> 4.1.5'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
@@ -19,7 +18,6 @@ gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '~> 2.5.1'
 gem 'coffee-rails', '~> 4.0.1'
 gem 'jquery-rails-cdn', '~> 1.0.3'
-# gem 'turbolinks', '~> 2.2.2'
 gem 'jbuilder', '~> 2.1.1'
 
 gem 'slim-rails', '~> 2.1.4'
