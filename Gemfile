@@ -9,8 +9,12 @@ group :production do
 end
 
 group :development, :test do
-  gem 'sqlite3',      '~> 1.3.10'
-  gem 'rspec-rails',  '~> 3.1.0'
+  gem 'sqlite3',        '~> 1.3.10'
+  gem 'rspec-rails',    '~> 3.1.0'
+
+  gem 'better_errors',  '~> 2.0.0'
+  gem 'jazz_hands',     github: 'nixme/jazz_hands', branch: 'bring-your-own-debugger'
+  gem 'pry-byebug'
 end
 
 group :test do
