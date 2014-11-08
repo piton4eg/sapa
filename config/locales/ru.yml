@@ -64,9 +64,14 @@ ru:
       models:
         user:
           attributes:
+            password:
+              confirmation: не совпадает
+              blank: не может быть пустым
+              too_short: слишком короткий
             password_confirmation:
               confirmation: не совпадает
               blank: не может быть пустым
+              too_short: слишком короткий
   helpers:
     submit:
       user:

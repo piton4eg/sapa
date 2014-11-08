@@ -22,6 +22,9 @@ group :test do
   gem 'cucumber-rails', '~> 1.4.2', require: false
   gem 'database_cleaner', '~> 1.3.0'
   gem 'zeus'
+  gem 'rspec-activemodel-mocks'
+  gem 'shoulda-matchers', require: false
+  gem 'faker', '~> 1.4.3'
 end
 
 gem 'sass-rails',       '~> 4.0.4'
