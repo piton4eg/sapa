@@ -4,12 +4,18 @@ ruby '2.1.3'
 gem 'rails', '~> 4.1.7'
 
 group :production do
-  gem 'pg', '~> 0.17.1'
+  gem 'pg',             '~> 0.17.1'
   gem 'rails_12factor', '~> 0.0.3'
 end
 
 group :development, :test do
-  gem 'sqlite3', '~> 1.3.10'
+  gem 'sqlite3',      '~> 1.3.10'
+  gem 'rspec-rails',  '~> 3.1.0'
+end
+
+group :test do
+  gem 'cucumber-rails', '~> 1.4.2', require: false
+  gem 'database_cleaner', '~> 1.3.0'
 end
 
 gem 'sass-rails',       '~> 4.0.4'
