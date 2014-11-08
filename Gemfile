@@ -15,11 +15,13 @@ group :development, :test do
   gem 'better_errors',  '~> 2.0.0'
   gem 'jazz_hands',     github: 'nixme/jazz_hands', branch: 'bring-your-own-debugger'
   gem 'pry-byebug'
+  gem 'factory_girl_rails', '~> 4.5.0'
 end
 
 group :test do
   gem 'cucumber-rails', '~> 1.4.2', require: false
   gem 'database_cleaner', '~> 1.3.0'
+  gem 'zeus'
 end
 
 gem 'sass-rails',       '~> 4.0.4'
@@ -30,7 +32,7 @@ gem 'jbuilder',         '~> 2.1.3'
 
 gem 'slim-rails',       '~> 2.1.5'
 gem 'carrierwave',      '~> 0.10.0'
-gem 'rmagick',          '~> 2.13.3'
+gem 'rmagick',          '~> 2.13.3', require: false
 gem 'fog',              '~> 1.22.1'
 
 gem 'bcrypt-ruby',      '~> 3.1.5'
