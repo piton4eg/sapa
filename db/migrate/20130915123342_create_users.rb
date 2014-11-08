@@ -1,3 +1,4 @@
+# todo: удалить после того как залью на хероку
 class CreateUsers < ActiveRecord::Migration
   def change
     create_table :users do |t|

@@ -32,37 +32,68 @@ p
   line-height: 1.7em
 
 /* Header */
-
-.main-header
-  position: absolute
-  margin-top: 20px
-  z-index: 100
-  left: 0
-  right: 0
-
-.main-text
+#main-header
   font-family: 'Fira Sans', sans-serif
   text-transform: uppercase
-  font-size: 2.2em
-  letter-spacing: 2px
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.5)
-  color: white
 
-.main-logo
-  margin-left: 50px
-  z-index: 100
-  float: left
+  position: relative
+  overflow: hidden
+  height: 30px
+  margin: 20px 0
+  ul
+    list-style: none
+    margin: 0
+    padding: 0
+    position: relative
+    left: 50%
+    float: left
+    height: 30px
+    li
+      position: relative
+      left: -50%
+      float: left
+      margin: 0 5px
+      height: 30px
+      a
+        display: block
+        text-decoration: none
+        padding: 4px 10px
+        &:visited
+          color: gray
+        &:hover
+          background-color: black
+          color: white
+    li.active
+      a
+        background-color: gray
+        color: white
+        &:hover
+          background-color: black
+          color: white
 
-.main-links  
-  float: right
-  margin-right: 50px
-  a 
-    margin-right: 15px
-    text-decoration: none
-    color: white
+// .main-text
+//   font-family: 'Fira Sans', sans-serif
+//   text-transform: uppercase
+//   font-size: 2.2em
+//   letter-spacing: 2px
+//   text-shadow: 1px 1px 1px rgba(0,0,0,0.5)
+//   color: white
+
+// .main-logo
+//   margin-left: 50px
+//   z-index: 100
+//   float: left
+
+// .main-links
+//   float: right
+//   margin-right: 50px
+//   a
+//     margin-right: 15px
+//     text-decoration: none
+//     color: white
 
 .center-header
-  h1 
+  h1
     text-transform: uppercase
     font-size: 3em
     letter-spacing: 2px
@@ -90,7 +121,7 @@ p
   img
     width: 100%
   .gallery-info
-    text-align: right    
+    text-align: right
     font-size: 15px
     position: absolute
     bottom: 15px

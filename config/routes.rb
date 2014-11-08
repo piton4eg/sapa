@@ -1,16 +1,19 @@
 Sapa::Application.routes.draw do
-  get '/about', to: 'static_pages#about'
-  get '/contact', to: 'static_pages#contact'
+  get '/about',     to: 'static_pages#about'
+  get '/contacts',  to: 'static_pages#contacts'
 
   controller :sessions do
-    get     'login'   => :new
-    post    'login'   => :create
-    delete  'logout'  => :destroy
+    get     'login',  to: :new
+    post    'login',  to: :create
+    delete  'logout', to: :destroy
   end
 
-  resources :users, only: %i(new create)
-  get '/profile', to: 'users#edit'
-  put '/profile', to: 'users#update'
+  controller :users do
+    get   '/signup',  to: :new
+    post  '/signup',  to: :create
+    get   '/profile', to: :edit
+    put   '/profile', to: :update
+  end
 
   resources :galleries
   resources :photos

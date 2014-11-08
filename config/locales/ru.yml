@@ -1,27 +1,47 @@
 ru:
+  header:
+    profile: "Профиль"
+    signup_title: Регистрация
+    login_title: Вход
+    logout_title: Выход
+    root: Главная
+    galleries: Альбомы
+    about: Обо мне
+    contacts: Контакты
+
+  users:
+    signup_title: Регистрация
+    cannot_be_deleted: Вы не можете быть удалены
+    edit_profile_title: Редактирование профиля
+    success_create_user: Пользователь успешно создан
+    success_edit_user: Пользователь успешно изменен
+  photos:
+    edit_photo_title: Редактирование фотографий
+  galleries:
+    edit_gallery_title: Редактирование альбомов
+  # edit_title: Редактировать
+
   gallery_save_success: Альбом успешно сохранен
   gallery_edit_success: Альбом успешно изменен
   gallery_create_link: Конечно
   gallery_create_question: Создать новый альбом?
   new_gallery_title: Новый альбом
+
   photo_save_success: Фотография успешно сохранена
   photo_edit_success: Фотография успешно изменена
   photo_create_link: Конечно
   photo_create_question: Создать новую фотографию?
+
   unknown_authorize: Неудачная попытка авторизации
   new_session: Авторизация
   new_session_name: Имя
   new_session_password: Пароль
   new_session_submit: Войти
   delete_session_submit: Выйти
-  user_create_success: Пользователь успешно создан
-  user_edit_success: Пользователь успешно изменен
-  profile_edit_title: Редактирование профиля
-  photo_edit_title: Редактирование фотографий
-  galleries_edit_title: Редактирование альбомов
-  edit_title: Редактировать
+
 #  user_delete_success: Пользователь удален
   bad_request: Произошли ошибки
+
   activerecord:
     models:
       user: Пользователь

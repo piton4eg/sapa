@@ -1,14 +1,17 @@
 .container
 
-    .span4.offset4
-      h1.center = t(:new_session)
-      / .my-form
-      = form_tag do
-        .form-group
-          = label_tag :name, t(:new_session_name)
-          = text_field_tag :name, params[:name], class: 'form-control'
-        .form-group
-          = label_tag :password, t(:new_session_password)
-          = password_field_tag :password, params[:password], class: 'form-control'
+  .span4.offset4
+    h1.center = t(:new_session)
+    / .my-form
+    = form_tag login_path, method: :post do
+      .form-group
+        = label_tag           :email, t(:new_session_name)
+        = text_field_tag      :email, params[:email], class: 'form-control'
+      .form-group
+        = label_tag           :password, t(:new_session_password)
+        = password_field_tag  :password, params[:password], class: 'form-control'
+      .form-group
+        = check_box_tag       :remember_me, 1, params[:remember_me]
+        = label_tag           :remember_me
 
-        .center = submit_tag t(:new_session_submit), class: 'btn btn-primary btn-standart'
+      .center = submit_tag t(:new_session_submit), class: 'btn btn-primary btn-standart'

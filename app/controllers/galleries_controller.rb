@@ -1,5 +1,5 @@
 class GalleriesController < ApplicationController
-  skip_before_filter :authorize, only: [:index, :show]
+  skip_before_filter :require_login, only: [:index, :show]
   before_filter :find_gallery, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -13,7 +13,7 @@ class GalleriesController < ApplicationController
   def create
     @gallery = Gallery.new(gallery_params)
     if @gallery.save
-      flash[:success] = t(:gallery_save_success) 
+      flash[:success] = t(:gallery_save_success)
       redirect_to gallery_path(@gallery)
     else
       render :new

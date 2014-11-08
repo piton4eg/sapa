@@ -1,23 +1,22 @@
 class SessionsController < ApplicationController
   include ApplicationHelper
-  skip_before_filter :authorize
+  skip_before_filter :require_login, except: :destroy
 
   def new
-    redirect_to profile_path if logged_in?
+    # redirect_to profile_path if logged_in?
   end
 
   def create
-    user = User.find_by(name: params[:name])
-    if user and user.authenticate(params[:password])
-      session[:user_id] = user.id
-      redirect_to root_url
+    if @user = login(params[:email], params[:password], params[:remember_me])
+      redirect_back_or_to root_url, notice: "Logged in!"
     else
-      redirect_to login_url, alert: t(:unknown_authorize)
+      flash.now[:alert] = t(:unknown_authorize)
+      render action: 'new'
     end
   end
 
   def destroy
-    session[:user_id] = nil
-    redirect_to root_url
+    logout
+    redirect_to root_url, notice: "Logged out!"
   end
 end

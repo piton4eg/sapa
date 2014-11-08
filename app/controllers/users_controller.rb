@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  skip_before_filter :authorize, only: [:new, :create]
-  before_action :redirect_if_user_present, only: [:new, :create]
-  before_action :find_first_user, only: [:edit, :update]
+  skip_before_filter :require_login,        only: %i(new create)
+  before_action :redirect_if_user_present,  only: %i(new create)
+  before_action :find_first_user,           only: %i(edit update)
 
   def new
     @user = User.new
@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to profile_path, notice: t(:user_create_success)
     else
-      render action: 'new'
+      render :new
     end
   end
 
@@ -23,7 +23,7 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       redirect_to profile_path, notice: t(:user_edit_success)
     else
-      render action: 'edit'
+      render :edit
     end
   end
 
@@ -47,6 +47,7 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:name, :password, :password_confirmation, :info, :avatar, :avatar_cache, :remote_avatar_url, :remove_avatar)
+      params.require(:user).permit(:email, :password, :password_confirmation,
+        :info, :avatar, :avatar_cache, :remote_avatar_url, :remove_avatar)
     end
 end

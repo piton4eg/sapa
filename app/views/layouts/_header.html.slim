@@ -1,0 +1,13 @@
+#main-header
+  ul
+    = current_link_to t('header.root'), root_path
+    = current_link_to t('header.galleries'), galleries_path
+    = current_link_to t('header.about'), about_path
+    = current_link_to t('header.contacts'), contacts_path
+    - if current_user
+      li = current_link_to t('header.profile'), profile_path
+      li = link_to t('header.logout_title'), logout_path
+    - else
+      - unless User.count > 0
+        li = current_link_to t('header.signup_title'), signup_path
+      li = current_link_to t('header.login_title'), login_path
