@@ -24,7 +24,6 @@ group :test do
   gem 'zeus'
   gem 'rspec-activemodel-mocks'
   gem 'shoulda-matchers', require: false
-  gem 'faker', '~> 1.4.3'
 end
 
 gem 'sass-rails',       '~> 4.0.4'
@@ -43,3 +42,5 @@ gem 'newrelic_rpm',     '~> 3.8.1.221'
 gem 'unf',              '~> 0.1.4'
 gem 'simple_form',      '~> 3.0.2'
 gem 'sorcery',          '~> 0.8.6'
+gem 'email_validator'
+gem 'active_attr'

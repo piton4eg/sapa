@@ -1,9 +1,9 @@
 doctype html
 html
-head
-  title = full_title(yield(:title))
-  = render 'layouts/meta'
-  = render 'layouts/header'
+  head
+    title = full_title(yield(:title))
+    = render 'application/meta'
+    = render 'application/header'
 
-body
-  = yield
+  body
+    = yield

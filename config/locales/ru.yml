@@ -1,6 +1,8 @@
 ru:
-  header:
-    profile: "Профиль"
+  title: Маркова Ольга
+
+  top_menu:
+    profile: Профиль
     signup_title: Регистрация
     login_title: Вход
     logout_title: Выход
@@ -11,36 +13,42 @@ ru:
 
   users:
     signup_title: Регистрация
+    profile_edit_title: Редактирование профиля
     cannot_be_deleted: Вы не можете быть удалены
-    edit_profile_title: Редактирование профиля
-    success_create_user: Пользователь успешно создан
-    success_edit_user: Пользователь успешно изменен
+    user_create_success: Пользователь успешно создан
+    user_edit_success: Пользователь успешно изменен
+    user_delete_success: Пользователь удален
+
   photos:
-    edit_photo_title: Редактирование фотографий
+    photo_edit_title: Редактирование фотографий
+    photo_save_success: Фотография успешно сохранена
+    photo_edit_success: Фотография успешно изменена
+    photo_create_link: Конечно
+    photo_create_question: Создать новую фотографию?
+
   galleries:
-    edit_gallery_title: Редактирование альбомов
-  # edit_title: Редактировать
+    gallery_new_title: Новый альбом
+    gallery_edit_title: Редактирование альбомов
+    gallery_save_success: Альбом успешно сохранен
+    gallery_edit_success: Альбом успешно изменен
+    gallery_create_link: Конечно
+    gallery_create_question: Создать новый альбом?
 
-  gallery_save_success: Альбом успешно сохранен
-  gallery_edit_success: Альбом успешно изменен
-  gallery_create_link: Конечно
-  gallery_create_question: Создать новый альбом?
-  new_gallery_title: Новый альбом
+  sessions:
+    name: Имя
+    password: Пароль
+    remember_me: Запомнить
+    create:
+      submit: Войти
+      success: Успешный вход
+      error: Неудачная попытка авторизации
+    destroy:
+      submit: Выйти
+      success: Вы вышли
+    new: Авторизация
 
-  photo_save_success: Фотография успешно сохранена
-  photo_edit_success: Фотография успешно изменена
-  photo_create_link: Конечно
-  photo_create_question: Создать новую фотографию?
-
-  unknown_authorize: Неудачная попытка авторизации
-  new_session: Авторизация
-  new_session_name: Имя
-  new_session_password: Пароль
-  new_session_submit: Войти
-  delete_session_submit: Выйти
-
-#  user_delete_success: Пользователь удален
   bad_request: Произошли ошибки
+  something_went_wrong: Что-то пошло не так
 
   activerecord:
     models:
@@ -72,6 +80,9 @@ ru:
               confirmation: не совпадает
               blank: не может быть пустым
               too_short: слишком короткий
+            email:
+              taken: уже зарегистрирован
+
   helpers:
     submit:
       user:

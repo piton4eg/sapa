@@ -8,15 +8,15 @@ class SessionsController < ApplicationController
 
   def create
     if @user = login(params[:email], params[:password], params[:remember_me])
-      redirect_back_or_to root_url, notice: "Logged in!"
+      redirect_back_or_to root_url, notice: t('sessions.create.success')
     else
-      flash.now[:alert] = t(:unknown_authorize)
-      render action: 'new'
+      flash.now[:error] = t('sessions.create.error')
+      render :new
     end
   end
 
   def destroy
     logout
-    redirect_to root_url, notice: "Logged out!"
+    redirect_to root_url, notice: t('sessions.destroy.success')
   end
 end

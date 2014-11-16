@@ -2,8 +2,7 @@ require 'rails_helper'
 
 describe 'users/new.html.slim' do
   before do
-    user = mock_model('User').as_new_record.as_null_object
-    assign(:user, user)
+    assign(:user, mock_model('User').as_new_record.as_null_object)
     render
   end
 

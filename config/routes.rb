@@ -3,9 +3,9 @@ Sapa::Application.routes.draw do
   get '/contacts',  to: 'static_pages#contacts'
 
   controller :sessions do
-    get     'login',  to: :new
-    post    'login',  to: :create
-    delete  'logout', to: :destroy
+    get     '/login',  to: :new
+    post    '/login',  to: :create
+    delete  '/logout', to: :destroy
   end
 
   controller :users do
