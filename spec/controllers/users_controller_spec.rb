@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe UsersController do
   describe 'GET new' do
-    let(:user) { mock_model("User").as_new_record }
+    let(:user) { mock_model(User).as_new_record }
 
     before(:each) do
       allow(User).to receive(:new).and_return(user)
@@ -41,17 +41,19 @@ describe UsersController do
     context 'when save message return true' do
       before(:each) do
         expect(user).to receive(:save).and_return(true)
-        post :create, user: params
       end
       it 'redirects to profile path' do
+        post :create, user: params
         expect(response).to redirect_to root_path
       end
       it 'assigns a success flash message' do
+        post :create, user: params
         expect(flash[:notice]).to eq I18n.t('users.user_create_success')
       end
-      # it 'sends auto_login method' do
-      #   expect(@controller).to receive(:auto_login)
-      # end
+      it 'sends auto_login method' do
+        expect(@controller).to receive(:auto_login).with(user)
+        post :create, user: params
+      end
     end
 
     context 'when save message return false' do
