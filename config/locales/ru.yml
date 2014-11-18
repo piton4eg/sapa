@@ -15,9 +15,14 @@ ru:
     signup_title: Регистрация
     profile_edit_title: Редактирование профиля
     cannot_be_deleted: Вы не можете быть удалены
-    user_create_success: Пользователь успешно создан
-    user_edit_success: Пользователь успешно изменен
-    user_delete_success: Пользователь удален
+    create:
+      success: Пользователь успешно создан
+      error: Не удалось создать
+    update:
+      success: Пользователь успешно изменен
+      error: Не удалось изменить
+    delete:
+      success: Пользователь удален
 
   photos:
     photo_edit_title: Редактирование фотографий
