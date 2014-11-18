@@ -1,9 +1,8 @@
 class SessionsController < ApplicationController
-  include ApplicationHelper
   skip_before_filter :require_login, except: :destroy
 
   def new
-    # redirect_to profile_path if logged_in?
+    redirect_to profile_path if logged_in?
   end
 
   def create

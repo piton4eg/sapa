@@ -2,9 +2,23 @@ require "rails_helper"
 
 describe SessionsController do
   describe 'GET new' do
-    it 'render new template' do
-      get :new
-      expect(response).to render_template :new
+    context 'when logged in' do
+      before do
+        allow(@controller).to receive(:logged_in?).and_return(true)
+      end
+      it 'redirects to profile page' do
+         get :new
+         expect(response).to redirect_to profile_path
+      end
+    end
+    context 'when guest' do
+      before do
+        allow(@controller).to receive(:logged_in?).and_return(false)
+      end
+      it 'render new template' do
+        get :new
+        expect(response).to render_template :new
+      end
     end
   end
 
