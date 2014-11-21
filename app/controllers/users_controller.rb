@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   skip_before_filter :require_login,        only: %i(new create)
-  # todo: fix it
-  # before_action :redirect_if_user_present,  only: %i(new create)
+
+  before_action :redirect_if_user_present,  only: %i(new create)
   before_action :find_first_user,           only: %i(edit update)
 
   def new
@@ -38,7 +38,7 @@ class UsersController < ApplicationController
   end
 
   def redirect_if_user_present
-    redirect_to profile_path unless User.count.zero?
+    redirect_to root_path, flash: { error: t('users.create.not_available') } unless User.count.zero?
   end
 
   def user_params
