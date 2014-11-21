@@ -3,10 +3,11 @@
 .span4.offset1
 = f.label           :email
 = f.text_field      :email
+
 - unless user.new_record?
   = f.label           :info
   = f.text_area       :info
-hr
+
 = f.label           :password
 = f.password_field  :password
 = f.label           :password_confirmation
