@@ -8,4 +8,8 @@ html
   body
     .row
       .small-12.medium-10.medium-offset-1.columns
+        .small-10.small-offset-1.medium-8.medium-offset-2.large-6.large-offset-3.columns
+          = display_flash_messages
         = yield
+
+    = javascript_include_tag "application"

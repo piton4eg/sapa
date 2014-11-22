@@ -16,14 +16,12 @@ ru:
     profile_edit_title: Редактирование профиля
     cannot_be_deleted: Вы не можете быть удалены
     create:
-      success: Пользователь успешно создан
-      error: Не удалось создать
+      success: Вы успешно зарегистрировались
+      error: Не удалось зарегистрироваться
       not_available: Регистрация не доступна
     update:
-      success: Пользователь успешно изменен
-      error: Не удалось изменить
-    delete:
-      success: Пользователь удален
+      success: Профиль успешно изменен
+      error: Не удалось изменить профиль
 
   photos:
     photo_edit_title: Редактирование фотографий
@@ -41,7 +39,7 @@ ru:
     gallery_create_question: Создать новый альбом?
 
   sessions:
-    name: Имя
+    email: Email
     password: Пароль
     remember_me: Запомнить
     create:
@@ -55,6 +53,9 @@ ru:
 
   bad_request: Произошли ошибки
   something_went_wrong: Что-то пошло не так
+
+  common:
+    or: 'или'
 
   activerecord:
     models:
@@ -88,7 +89,7 @@ ru:
               too_short: слишком короткий
             email:
               taken: уже зарегистрирован
-
+              invalid: неверный формат
   helpers:
     submit:
       user:
