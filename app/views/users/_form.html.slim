@@ -1,28 +1,30 @@
-= f.label           :email
-= f.text_field      :email
+.small-10.small-offset-1.medium-8.medium-offset-2.large-6.large-offset-3.columns
 
-- unless user.new_record?
-  = f.label           :info
-  = f.text_area       :info
+  = f.label           :email
+  = f.text_field      :email
 
-  = f.hidden_field    :avatar_cache
+  - unless user.new_record?
+    = f.label           :info
+    = f.text_area       :info
 
-  = image_tag(user.avatar_url) if user.avatar?
+    = f.hidden_field    :avatar_cache
 
-  = f.label           :avatar
-  =' f.file_field     :avatar
+    = image_tag(user.avatar_url) if user.avatar?
 
-  =' t('common.or')
-  = f.label           :remote_avatar_url
-  = f.text_field      :remote_avatar_url
+    = f.label           :avatar
+    =' f.file_field     :avatar
 
-  = f.check_box       :remove_avatar
-  = f.label           :remove_avatar
+    =' t('common.or')
+    = f.label           :remote_avatar_url
+    = f.text_field      :remote_avatar_url
 
-= f.label           :password
-= f.password_field  :password
+    = f.check_box       :remove_avatar
+    = f.label           :remove_avatar
 
-= f.label           :password_confirmation
-= f.password_field  :password_confirmation
+  = f.label           :password
+  = f.password_field  :password
 
-.center = f.submit class: 'btn btn-primary btn-standart'
+  = f.label           :password_confirmation
+  = f.password_field  :password_confirmation
+
+  .center = f.submit class: 'button'
