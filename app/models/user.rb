@@ -16,8 +16,6 @@ class User < ActiveRecord::Base
   private
 
   def ensure_an_admin_remains
-    if User.count.zero?
-      raise t('users.cannot_be_deleted')
-    end
+    raise I18n.t('users.cannot_be_deleted') if User.count.zero?
   end
 end

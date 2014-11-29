@@ -8,7 +8,13 @@ Scenario: Guest user
   When I go to home page
   Then I should see guest menu
 
+Scenario: Guest user with existing user
+  Given I am a guest
+  And user with "user@email.com" exists
+  When I go to home page
+  Then I should see guest menu without registration
+
 Scenario: User
   Given I am "user@email.com" user
   When I go to home page
-  Then I should see "user@email.com" user menu
+  Then I should see user menu

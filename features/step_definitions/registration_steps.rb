@@ -47,7 +47,7 @@ Given(/^I am "(.*?)" user$/) do |email|
   step "I fill the login form with valid data for \"#{email}\" user"
 end
 
-Then(/^I should see "(.*?)" user menu$/) do |email|
+Then(/^I should see user menu$/) do
   expect(page).to have_content(I18n.t('top_menu.profile'))
 end
 
@@ -62,7 +62,7 @@ When(/^I fill the login form with valid data for "(.*?)" user$/) do |email|
   click_button I18n.t('sessions.create.submit')
 end
 
-Then(/^I should be logged in as "(.*?)" user$/) do |email|
+Then(/^I should be logged in as user$/) do
   expect(page).to have_content(I18n.t('top_menu.profile'))
 end
 
@@ -72,4 +72,9 @@ end
 
 Then(/^I should be logged out$/) do
   expect(page).not_to have_content(I18n.t('top_menu.profile'))
+end
+
+Then(/^I should see guest menu without registration$/) do
+  expect(page).to have_selector('#top-menu')
+  expect(page).not_to have_link(I18n.t('top_menu.signup_title'), href: signup_path)
 end
