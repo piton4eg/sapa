@@ -13,7 +13,7 @@ class GalleriesController < ApplicationController
   def create
     @gallery = Gallery.new(gallery_params)
     if @gallery.save
-      flash[:success] = t(:gallery_save_success)
+      flash[:success] = t('galleries.create.success')
       redirect_to gallery_path(@gallery)
     else
       render :new
@@ -29,7 +29,7 @@ class GalleriesController < ApplicationController
 
   def update
     if @gallery.update_attributes(gallery_params)
-      flash[:success] = t(:gallery_edit_success)
+      flash[:success] = t('galleries.edit.success')
       redirect_to gallery_path(@gallery)
     else
       render :edit
@@ -51,6 +51,6 @@ class GalleriesController < ApplicationController
   end
 
   def available_galleries
-    @available_galleries ||= logged_in? ? Gallery.all : Gallery.opened.with_photos
+    @available_galleries ||= logged_in? ? Gallery.all : Gallery.opened
   end
 end

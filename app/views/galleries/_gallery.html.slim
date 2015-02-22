@@ -1,14 +1,11 @@
 .gallery
   h2.gallery-title = gallery.name
   - if logged_in?
-    = link_to edit_gallery_path(gallery) do
-      span.glyphicon.glyphicon-pencil
+    = link_to t('galleries.edit.link'), edit_gallery_path(gallery)
   - if gallery.hidden?
-    b = "Скрытый альбом" 
+    b = t('galleries.hidden')
   - if gallery.avatar.present?
-    = link_to image_tag(gallery.avatar.image_url.to_s), gallery_path(gallery) 
-  .gallery-info 
+    = link_to image_tag(gallery.avatar.image_url.to_s), gallery_path(gallery)
+  .gallery-info
   	span = gallery.info
-  	= link_to gallery_path(gallery) do
-  		span.glyphicon.glyphicon-chevron-right
   .clear

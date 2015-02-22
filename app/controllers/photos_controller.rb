@@ -1,24 +1,17 @@
 class PhotosController < ApplicationController
+  before_filter :find_gallery
+  skip_before_filter :require_login, only: :show
   before_filter :find_photo, only: [:show, :edit, :update, :destroy]
 
-  def index
-    @photos = Photo.all
-
-  end
-
   def new
-    @photo = Photo.new(gallery_id: params[:gallery])
+    @photo = @gallery.photos.new
   end
 
   def create
-    @photo = Photo.new(photo_params)
+    @photo = @gallery.photos.new(photo_params)
     if @photo.save
-      flash[:success] = t(:photo_save_success)
-      if @photo.gallery.present?
-        redirect_to gallery_path(@photo.gallery)
-      else
-        redirect_to photo_path(@photo)
-      end
+      flash[:success] = t('photos.create.success')
+      redirect_to edit_gallery_photo_path(@gallery, @photo)
     else
       render :new
     end
@@ -28,7 +21,6 @@ class PhotosController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
@@ -37,8 +29,8 @@ class PhotosController < ApplicationController
       if photo_params[:main_photo] == '1'
         Photo.on_main.without_photo(@photo.id).update_all(main_photo: false)
       end
-      flash[:success] = t(:photo_edit_success)
-      redirect_to photo_path(@photo)
+      flash[:success] = t('photos.edit.success')
+      redirect_to edit_gallery_photo_path(@gallery, @photo)
     else
       render :edit
     end
@@ -51,10 +43,14 @@ class PhotosController < ApplicationController
 
   private
   def photo_params
-    params.require(:photo).permit(:name, :image, :gallery_id, :main_photo, :portfolio)
+    params.require(:photo).permit(:name, :gallery_id, :main_photo, :portfolio, :image_cache, :image, :remote_image_url, :remove_image)
   end
 
   def find_photo
     @photo = Photo.find(params[:id])
+  end
+
+  def find_gallery
+    @gallery ||= Gallery.find(params[:gallery_id])
   end
 end

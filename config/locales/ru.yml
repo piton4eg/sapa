@@ -24,19 +24,30 @@ ru:
       error: Не удалось изменить профиль
 
   photos:
-    photo_edit_title: Редактирование фотографий
-    photo_save_success: Фотография успешно сохранена
-    photo_edit_success: Фотография успешно изменена
-    photo_create_link: Конечно
-    photo_create_question: Создать новую фотографию?
+    add: Добавить фотографию
+    index:
+      title: Фотографии
+    create:
+      title: Новая фотография
+      success: Фотография успешно сохранена
+    edit:
+      title: Редактирование фотографии
+      success: Фотография успешно изменена
 
   galleries:
-    gallery_new_title: Новый альбом
-    gallery_edit_title: Редактирование альбомов
-    gallery_save_success: Альбом успешно сохранен
-    gallery_edit_success: Альбом успешно изменен
-    gallery_create_link: Конечно
-    gallery_create_question: Создать новый альбом?
+    hidden: Скрытый альбом
+    index:
+      title: Альбомы
+    create:
+      link: Создать новый альбом
+      title: Новый альбом
+      success: Альбом успешно сохранен
+    edit:
+      link: Редактировать альбом
+      title: Редактирование альбома
+      success: Альбом успешно изменен
+    show:
+      link: Просмотр
 
   sessions:
     email: Email
@@ -56,6 +67,9 @@ ru:
 
   common:
     or: 'или'
+    select_file: 'Выберите файл'
+    on_main: 'На главную'
+    back: Назад
 
   activerecord:
     models:
@@ -75,6 +89,12 @@ ru:
         info: Описание
         avatar_id: Обложка
         hidden: Скрыть
+      photo:
+        name: Название
+        main_photo: На главную
+        portfolio: В портфолио
+        remote_image_url: вставьте ссылку
+        remove_image: Удалить фотографию
     errors:
       models:
         user:
@@ -96,5 +116,8 @@ ru:
         create: Создать
         update: Применить
       gallery:
+        create: Создать
+        update: Применить
+      photo:
         create: Создать
         update: Применить

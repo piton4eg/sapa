@@ -1,10 +1,12 @@
-.main-header
-  .main-logo.main-text = @gallery.name
-  .main-links.main-text
-    = link_to 'Назад', galleries_path
-.clear
+.center
+  h2 = @gallery.name
 
-.home-photo.center
-  .fotorama	data-width="100%" data-max-height="100%" data-transition="crossfade" data-loop="true" data-keyboard="true" data-nav="thumbs" data-fit="cover" data-allowfullscreen="native"
-    - @gallery.photos.with_image.each do |photo|
-    	= image_tag photo.image_url.to_s, class: 'photo'
+- @gallery.photos.each_slice(3) do |slice|
+  .row
+    - slice.each do |photo|
+      .small-12.medium-4.columns.end
+        = render 'photos/one_photo', photo: photo, mode: :view
+
+- if logged_in?
+  .center
+    = link_to t('galleries.edit.link'), edit_gallery_path(@gallery), class: 'button'

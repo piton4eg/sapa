@@ -1,8 +1,14 @@
-.span4
-  h2 Редактирование альбома
-  = render 'form'
-.span8
-  = link_to 'New photo', new_photo_path(gallery: @gallery)
-  - if @photos.present?
-    h2 Фотографии
-    = render partial: 'photos/edit_photo', collection: @photos, as: :photo
+h2.center = t('galleries.edit.title')
+= render 'form'
+
+hr
+h2.center = t('photos.index.title') if @photos.present?
+
+- @photos.each_slice(3) do |slice|
+  .row
+    - slice.each do |photo|
+      .small-12.medium-4.columns.end
+        = render 'photos/one_photo', photo: photo, mode: :edit
+
+.center
+  = link_to t('photos.add'), new_gallery_photo_path(@gallery), class: 'button'

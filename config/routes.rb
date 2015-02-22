@@ -15,8 +15,9 @@ Sapa::Application.routes.draw do
     put   '/profile', to: :update
   end
 
-  resources :galleries
-  resources :photos
+  resources :galleries do
+    resources :photos, except: :index
+  end
 
   root 'static_pages#home'
 end

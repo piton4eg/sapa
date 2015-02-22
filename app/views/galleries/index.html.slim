@@ -1,15 +1,14 @@
-= provide(:title, 'Альбомы')
+= provide(:title, t('galleries.index.title'))
 
 - if logged_in?
-  = link_to t(:new_gallery_title), new_gallery_path
+  = link_to t('galleries.create.link'), new_gallery_path
 
 .center-header.center
-	h1 Альбомы
+	h1 = t('galleries.index.title')
 
-.container
-	.row
-		- @galleries.each do |gallery|
-		  .col-md-6
-		    = render gallery
+.row
+	- @galleries.each do |gallery|
+	  .small-4.columns
+	    = render gallery
 
-h3.center = link_to 'На главную', root_path
+h3.center = link_to t('common.on_main'), root_path

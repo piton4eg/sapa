@@ -1,20 +1,6 @@
-h2 New photo
+h2.center = t('photos.create.title')
 
-.row
-  = simple_form_for @photo, html: { multipart: true } do |f|
-    = render 'form', f: f
-
-    br
-    = f.hidden_field :image_cache
-    =' f.file_field :image
-    ' или
-    = f.input :remote_image_url
-
-    = f.check_box :remove_image
-    = f.label :remove_image, class: 'checkbox-title'
-
-    br
-    = f.button :submit
-    = link_to 'Back', :back, class: 'btn btn-info btn-standart'
-
-    = image_tag(@photo.image_url(:thumb)) if @photo.image?
+= simple_form_for [:gallery, @photo], html: { multipart: true } do |f|
+  .row
+    .small-10.small-offset-1.medium-8.medium-offset-2.large-6.large-offset-3.columns
+      = render 'form', f: f, photo: @photo

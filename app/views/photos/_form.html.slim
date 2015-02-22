@@ -1,8 +1,25 @@
-= render partial: 'shared/error_messages', locals: { obj: @photo }
 = f.input :name
-= f.select :gallery_id, Gallery.all.collect { |g| [g.name, g.id] }, include_blank: 'Без альбома'
-br
-= f.check_box :main_photo
-= f.label :main_photo
-= f.check_box :portfolio
-= f.label :portfolio
+
+= f.hidden_field :image_cache
+= label_tag t('common.select_file')
+
+=' f.file_field :image
+= label_tag t('common.or')
+= f.input :remote_image_url
+
+= image_tag(photo.image_url(:mini)) if photo.image?
+
+.row
+  = f.check_box :main_photo
+  = f.label :main_photo
+  / = f.check_box :portfolio
+  / = f.label :portfolio
+
+- if photo.persisted?
+  .row
+    = f.check_box :remove_image
+    = f.label :remove_image, class: 'checkbox-title'
+
+.center
+  = link_to t('galleries.edit.link'), edit_gallery_path(photo.gallery), class: 'button success'
+  = f.button :submit, class: 'button'

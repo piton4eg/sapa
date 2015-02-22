@@ -1,15 +1,16 @@
 h2.center = t('sessions.new')
 
-.small-10.small-offset-1.medium-8.medium-offset-2.large-6.large-offset-3.columns
-  = form_tag login_path, method: :post, id: 'new_login' do
-    = label_tag           :email, t('sessions.email')
-    = text_field_tag      :email, params[:email]
+= form_tag login_path, method: :post, id: 'new_login' do
+  .row
+    .small-10.small-offset-1.medium-8.medium-offset-2.large-6.large-offset-3.columns
 
-    = label_tag           :password, t('sessions.password')
-    = password_field_tag  :password, params[:password]
+      = label_tag           :email, t('sessions.email')
+      = text_field_tag      :email, params[:email]
 
-    = check_box_tag       :remember_me, 1, params[:remember_me]
-    = label_tag           :remember_me, t('sessions.remember_me')
+      = label_tag           :password, t('sessions.password')
+      = password_field_tag  :password, params[:password]
 
-    .center
-      = submit_tag t('sessions.create.submit'), class: 'button'
+      = check_box_tag       :remember_me, 1, params[:remember_me]
+      = label_tag           :remember_me, t('sessions.remember_me')
+
+      .center = submit_tag t('sessions.create.submit'), class: 'button'
