@@ -25,10 +25,6 @@ class PhotosController < ApplicationController
 
   def update
     if @photo.update_attributes(photo_params)
-      # На главной может быть только одна фотография
-      if photo_params[:main_photo] == '1'
-        Photo.on_main.without_photo(@photo.id).update_all(main_photo: false)
-      end
       flash[:success] = t('photos.edit.success')
       redirect_to edit_gallery_photo_path(@gallery, @photo)
     else

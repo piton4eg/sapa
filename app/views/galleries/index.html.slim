@@ -6,9 +6,7 @@
 .center-header.center
 	h1 = t('galleries.index.title')
 
-.row
-	- @galleries.each do |gallery|
-	  .small-4.columns
-	    = render gallery
+- @galleries.each do |gallery|
+  = render gallery
 
 h3.center = link_to t('common.on_main'), root_path

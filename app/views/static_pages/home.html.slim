@@ -1,16 +1,5 @@
-/ .home-photo.center
-/   .fotorama	data-width="100%" data-max-height="100%" data-transition="crossfade" data-loop="true" data-keyboard="true" data-nav="thumbs" data-fit="cover"
-/     - @photos.each do |photo|
-/     	= image_tag photo.image_url.to_s, class: 'photo'
-
-#slides
+ul.list-unstyled
   - @photos.each do |photo|
-    = image_tag photo.image_url.to_s
-
-/ ul.slides
-/   input type="radio" name="radio-btn" id="img-1" checked=""
-/   li class="slide-container"
-/     .slide
-/       = image_tag photo.image_url.to_s
-/     .nav
-/       laber for="img-6"
+    li.col-md-4
+      a.fancybox href="#{photo.image_url}" rel="group"
+        = image_tag photo.image_url(:thumb).to_s

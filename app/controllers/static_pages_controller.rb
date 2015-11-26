@@ -9,7 +9,6 @@ class StaticPagesController < ApplicationController
     @user = User.first
   end
 
-  # def portfolio
-  #   @photos = Photo.in_portfolio
-  # end
+  def blog
+  end
 end

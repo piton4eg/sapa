@@ -26,6 +26,7 @@ group :test do
   gem 'shoulda-matchers', require: false
 end
 
+gem 'bootstrap-sass'
 gem 'sass-rails',       '~> 4.0.4'
 gem 'uglifier',         '~> 2.5.3'
 gem 'coffee-rails',     '~> 4.0.1'
@@ -34,6 +35,7 @@ gem 'jbuilder',         '~> 2.1.3'
 
 gem 'slim-rails',       '~> 2.1.5'
 gem 'carrierwave',      '~> 0.10.0'
+gem 'cloudinary'
 gem 'rmagick',          '~> 2.13.3', require: false
 gem 'fog',              '~> 1.22.1'
 
@@ -44,4 +46,5 @@ gem 'simple_form',      '~> 3.0.2'
 gem 'sorcery',          '~> 0.8.6'
 gem 'email_validator'
 gem 'active_attr'
-gem 'foundation-rails'
+
+gem 'fancybox2-rails'

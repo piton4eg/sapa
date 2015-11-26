@@ -2,3 +2,6 @@ h2 = @photo.name
 
 p = image_tag @photo.image_url.to_s
 p = link_to "Gallery: #{@photo.gallery.name}", gallery_path(@photo.gallery)
+
+- if logged_in?
+  = link_to t('photos.edit.link'), edit_gallery_photo_path

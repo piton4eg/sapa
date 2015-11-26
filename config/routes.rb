@@ -1,6 +1,7 @@
 Sapa::Application.routes.draw do
   get '/about',     to: 'static_pages#about'
   get '/contacts',  to: 'static_pages#contacts'
+  get '/blog',      to: 'static_pages#blog'
 
   controller :sessions do
     get     '/login',  to: :new

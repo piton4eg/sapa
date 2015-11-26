@@ -1,5 +1,6 @@
 #= require jquery
 #= require jquery_ujs
-#= require foundation
+#= require bootstrap-sprockets
+#= require fancybox
 
-$ -> $(document).foundation()
+$ -> $('a.fancybox').fancybox()
