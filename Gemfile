@@ -36,8 +36,6 @@ gem 'jbuilder',         '~> 2.1.3'
 gem 'slim-rails',       '~> 2.1.5'
 gem 'carrierwave',      '~> 0.10.0'
 gem 'cloudinary'
-gem 'rmagick',          '~> 2.13.3', require: false
-gem 'fog',              '~> 1.22.1'
 
 gem 'bcrypt-ruby',      '~> 3.1.5'
 gem 'newrelic_rpm',     '~> 3.8.1.221'
@@ -48,3 +46,4 @@ gem 'email_validator'
 gem 'active_attr'
 
 gem 'fancybox2-rails'
+gem "jquery-fileupload-rails"

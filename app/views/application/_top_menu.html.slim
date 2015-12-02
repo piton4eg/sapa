@@ -2,9 +2,9 @@
   ul
     = current_link_to t('top_menu.root'), root_path
     = current_link_to t('top_menu.galleries'), galleries_path
-    = current_link_to t('top_menu.blog'), about_path
+    / = current_link_to t('top_menu.blog'), about_path
     = current_link_to t('top_menu.about'), about_path
-    = current_link_to t('top_menu.contacts'), contacts_path
+    / = current_link_to t('top_menu.contacts'), contacts_path
     - if current_user
       = current_link_to t('top_menu.profile'), profile_path
       li = link_to t('top_menu.logout_title'), logout_path, method: :delete

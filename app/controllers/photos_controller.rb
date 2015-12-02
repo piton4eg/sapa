@@ -8,13 +8,7 @@ class PhotosController < ApplicationController
   end
 
   def create
-    @photo = @gallery.photos.new(photo_params)
-    if @photo.save
-      flash[:success] = t('photos.create.success')
-      redirect_to edit_gallery_photo_path(@gallery, @photo)
-    else
-      render :new
-    end
+    @photo = @gallery.photos.create(photo_params)
   end
 
   def show

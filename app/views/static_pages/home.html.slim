@@ -1,5 +1,4 @@
 ul.list-unstyled
   - @photos.each do |photo|
     li.col-md-4
-      a.fancybox href="#{photo.image_url}" rel="group"
-        = image_tag photo.image_url(:thumb).to_s
+      = link_to image_tag(photo.image_url(:thumb).to_s, class: 'img-rounded'), photo.image_url, class: 'fancybox', rel: 'group'

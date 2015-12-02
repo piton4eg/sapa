@@ -1,11 +1,31 @@
-.gallery
-  h2.gallery-title = gallery.name
-  - if logged_in?
-    = link_to t('galleries.edit.link'), edit_gallery_path(gallery)
-  - if gallery.hidden?
-    b = t('galleries.hidden')
-  - if gallery.avatar.present?
-    = link_to image_tag(gallery.avatar.image_url.to_s), gallery_path(gallery)
-  .gallery-info
-  	span = gallery.info
-  .clear
+.panel-group
+  .panel.panel-default
+    .panel-heading
+      .row
+        .col-md-8
+          h2.gallery-title = gallery.name
+          - if logged_in?
+            = link_to edit_gallery_path(gallery)
+              span.glyphicon.glyphicon-pencil aria-hidden="true" ='
+              = t('galleries.edit.link')
+            - if gallery.hidden?
+              b = t('galleries.hidden')
+          .gallery-info
+            span = gallery.info
+
+        .col-md-4
+          - if gallery.avatar
+            = image_tag(gallery.avatar.image_url(:thumb).to_s, class: 'img-circle')
+          - else
+            span Загрузите фотографии
+
+        .col-md-12.
+          h4.panel-title
+            a role="button" data-toggle="collapse" href="#gallery-#{gallery.id}" Фото
+
+    .panel-collapse.collapse id="gallery-#{gallery.id}"
+      .panel-body
+        .row
+          - gallery.photos.each do |photo|
+            .col-md-4
+              = link_to image_tag(photo.image_url(:thumb).to_s), photo.image_url, class: 'fancybox', rel: "#{gallery.id}"

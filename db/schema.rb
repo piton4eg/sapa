@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141012190624) do
+ActiveRecord::Schema.define(version: 20151202161527) do
 
   create_table "galleries", force: true do |t|
     t.string   "name",                       null: false
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20141012190624) do
   end
 
   create_table "photos", force: true do |t|
-    t.string   "name",                       null: false
+    t.string   "name"
     t.string   "image"
     t.integer  "gallery_id"
     t.datetime "created_at"

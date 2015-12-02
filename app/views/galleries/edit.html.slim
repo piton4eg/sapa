@@ -4,11 +4,10 @@ h2.center = t('galleries.edit.title')
 hr
 h2.center = t('photos.index.title') if @photos.present?
 
-- @photos.each_slice(3) do |slice|
-  .row
-    - slice.each do |photo|
-      .small-12.medium-4.columns.end
-        = render 'photos/one_photo', photo: photo, mode: :edit
+= form_for Photo.new, url: gallery_photos_path(@gallery) do |f|
+  = f.label :image, "Upload photos:"
+  = f.file_field :image, multiple: true, name: "photo[image]"
 
-.center
-  = link_to t('photos.add'), new_gallery_photo_path(@gallery), class: 'button'
+.row#photos
+  - @photos.each do |photo|
+    = render(photo)

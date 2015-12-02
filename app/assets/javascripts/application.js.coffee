@@ -2,5 +2,6 @@
 #= require jquery_ujs
 #= require bootstrap-sprockets
 #= require fancybox
+#= require jquery-fileupload/basic
 
-$ -> $('a.fancybox').fancybox()
+#= require my_images
