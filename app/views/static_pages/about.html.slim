@@ -1,7 +1,6 @@
 = provide(:title, 'Обо мне')
 
-.span9.offset1
-  .avatar.center
-    = image_tag @user.avatar_url.to_s
-  p
-    = @user.info
+.center
+  = image_tag @user.avatar_url(:thumb).to_s
+p
+  = @user.info
