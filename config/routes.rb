@@ -17,7 +17,9 @@ Sapa::Application.routes.draw do
   end
 
   resources :galleries, except: :show do
-    resources :photos, only: [:create, :update, :destroy]
+    resources :photos, only: :create do
+      delete 'destroy', as: 'destroy', on: :collection
+    end
   end
 
   root 'static_pages#home'

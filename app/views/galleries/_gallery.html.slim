@@ -29,4 +29,4 @@
       .panel-body
         .row
           - gallery.photos.each do |photo|
-            = render photo, gallery_id: gallery.id
+            .col-md-4 = render photo, gallery_id: gallery.id

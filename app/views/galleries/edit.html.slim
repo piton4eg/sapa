@@ -8,6 +8,12 @@ h2.center = t('photos.index.title')
   = f.label :image, "Upload photos:"
   = f.file_field :image, multiple: true, name: "photo[image]"
 
-#photos
+= form_tag destroy_gallery_photos_path(@gallery), method: :delete, id: 'photos' do
   - @photos.each do |photo|
-    = render photo
+    .col-md-4
+      = render photo
+      = check_box_tag 'photo_ids[]', photo.id
+
+
+  hr
+  = submit_tag 'Delete photos', data: { confirm: 'Are you sure?' }

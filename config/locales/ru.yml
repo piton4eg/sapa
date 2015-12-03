@@ -25,16 +25,8 @@ ru:
       error: Не удалось изменить профиль
 
   photos:
-    add: Добавить фотографию
     index:
       title: Фотографии
-    create:
-      title: Новая фотография
-      success: Фотография успешно сохранена
-    edit:
-      link: Редактировать фотографию
-      title: Редактирование фотографии
-      success: Фотография успешно изменена
 
   galleries:
     hidden: Скрытый альбом
@@ -48,8 +40,6 @@ ru:
       link: Редактировать альбом
       title: Редактирование альбома
       success: Альбом успешно изменен
-    show:
-      link: Просмотр
 
   sessions:
     email: Email
@@ -115,8 +105,5 @@ ru:
         create: Создать
         update: Применить
       gallery:
-        create: Создать
-        update: Применить
-      photo:
         create: Создать
         update: Применить
