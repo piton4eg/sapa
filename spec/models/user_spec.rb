@@ -12,6 +12,7 @@ describe User do
     it { should validate_presence_of :password_confirmation }
     it { should validate_presence_of :email }
     it { should validate_uniqueness_of :email }
+
     it 'is invalid if email is invalid' do
       user = build(:user, email: 'email')
       expect(user.valid?).to be_falsy
