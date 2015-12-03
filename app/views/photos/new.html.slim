@@ -1,6 +1,0 @@
-h2.center = t('photos.create.title')
-
-= simple_form_for [:gallery, @photo], html: { multipart: true } do |f|
-  .row
-    .small-10.small-offset-1.medium-8.medium-offset-2.large-6.large-offset-3.columns
-      = render 'form', f: f, photo: @photo

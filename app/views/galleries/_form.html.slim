@@ -1,10 +1,9 @@
 = simple_form_for @gallery, html: { multipart: true } do |f|
-  .row
-    .small-10.small-offset-1.medium-8.medium-offset-2.large-6.large-offset-3.columns
+  .center
+    = f.input :name
+    = f.input :info
+    = f.check_box :hidden
+    = f.label :hidden
 
-      = f.input :name
-      = f.input :info
-      = f.check_box :hidden
-      = f.label :hidden
-
-      .center = f.button :submit, class: 'button'
+    br
+    = f.button :submit, class: 'button'

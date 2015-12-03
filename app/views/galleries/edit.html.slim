@@ -2,12 +2,12 @@ h2.center = t('galleries.edit.title')
 = render 'form'
 
 hr
-h2.center = t('photos.index.title') if @photos.present?
+h2.center = t('photos.index.title')
 
 = form_for Photo.new, url: gallery_photos_path(@gallery) do |f|
   = f.label :image, "Upload photos:"
   = f.file_field :image, multiple: true, name: "photo[image]"
 
-.row#photos
+#photos
   - @photos.each do |photo|
-    = render(photo)
+    = render photo

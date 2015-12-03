@@ -90,7 +90,7 @@ ru:
         name: Название
         info: Описание
         avatar_id: Обложка
-        hidden: Скрыть
+        hidden: Скрытый
       photo:
         name: Название
         main_photo: На главную
@@ -98,24 +98,17 @@ ru:
         remote_image_url: вставьте ссылку
         remove_image: Удалить фотографию
     errors:
+      messages:
+        blank: не может быть пустым
+        confirmation: не совпадает
+        too_short: слишком короткий
+        invalid: неверный формат
       models:
-        photo:
-          attributes:
-            name:
-              blank: не может быть пустым
         user:
           attributes:
-            password:
-              confirmation: не совпадает
-              blank: не может быть пустым
-              too_short: слишком короткий
-            password_confirmation:
-              confirmation: не совпадает
-              blank: не может быть пустым
-              too_short: слишком короткий
             email:
               taken: уже зарегистрирован
-              invalid: неверный формат
+
   helpers:
     submit:
       user:

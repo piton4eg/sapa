@@ -4,12 +4,14 @@
       .row
         .col-md-8
           h2.gallery-title = gallery.name
+
           - if logged_in?
             = link_to edit_gallery_path(gallery)
               span.glyphicon.glyphicon-pencil aria-hidden="true" ='
               = t('galleries.edit.link')
             - if gallery.hidden?
               b = t('galleries.hidden')
+
           .gallery-info
             span = gallery.info
 
@@ -27,5 +29,4 @@
       .panel-body
         .row
           - gallery.photos.each do |photo|
-            .col-md-4
-              = link_to image_tag(photo.image_url(:thumb).to_s), photo.image_url, class: 'fancybox', rel: "#{gallery.id}"
+            = render photo, gallery_id: gallery.id

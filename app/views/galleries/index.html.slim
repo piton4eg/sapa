@@ -1,14 +1,12 @@
 = provide(:title, t('galleries.index.title'))
 
+.center
+	h1 = t('galleries.index.title')
+
 - if logged_in?
   = link_to new_gallery_path
     span.glyphicon.glyphicon-plus aria-hidden="true" ='
     = t('galleries.create.link')
 
-.center
-	h1 = t('galleries.index.title')
-
 - @galleries.each do |gallery|
   = render gallery
-
-h3.center = link_to t('common.on_main'), root_path
