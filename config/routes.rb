@@ -4,16 +4,16 @@ Sapa::Application.routes.draw do
   get '/blog',      to: 'static_pages#blog'
 
   controller :sessions do
-    get     '/login',  to: :new
-    post    '/login',  to: :create
-    delete  '/logout', to: :destroy
+    get     '/login',  action: :new
+    post    '/login',  action: :create
+    delete  '/logout', action: :destroy
   end
 
   controller :users do
-    get   '/signup',  to: :new
-    post  '/signup',  to: :create
-    get   '/profile', to: :edit
-    put   '/profile', to: :update
+    get   '/signup',  action: :new
+    post  '/signup',  action: :create
+    get   '/profile', action: :edit
+    put   '/profile', action: :update
   end
 
   resources :galleries, except: :show do
