@@ -47,3 +47,4 @@ gem 'active_attr'
 
 gem 'fancybox2-rails'
 gem "jquery-fileupload-rails"
+gem 'react-rails', '~> 1.5.0'
